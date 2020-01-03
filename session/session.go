@@ -1,4 +1,4 @@
-package main
+package session
 
 import (
 	"fmt"
@@ -50,11 +50,8 @@ func sub3Hour(timeSpan string) (preDay string, thisDay string) {
 }
 
 // 20:0-21:0 21:0-24:0 -> 20:0-24:0
-var mergeDeep = 3
 func mergeAdjacent(timeSpans []string, id int) []string {
-	mergeDeep--
-
-	if len(timeSpans) <= 1 || mergeDeep < 0 || id + 1 >= len(timeSpans) {
+	if len(timeSpans) <= 1 || id + 1 >= len(timeSpans) {
 		return timeSpans
 	}
 
@@ -62,13 +59,14 @@ func mergeAdjacent(timeSpans []string, id int) []string {
 	second := strings.Split(timeSpans[id+1], "-")
 
 	if first[1] == second[0] {
-		var tmpTimeSpans []string
-		for i := range timeSpans {
-			tmpTimeSpans = append(tmpTimeSpans, timeSpans[i])
+		var tail []string
+		if id+2 < len(timeSpans) {
+			tail = timeSpans[id+2:]
 		}
+
 		timeSpans = append(timeSpans[:id], first[0] + "-" + second[1])
-		if id+2 < len(tmpTimeSpans) {
-			timeSpans = append(timeSpans, tmpTimeSpans[id+2:]...)
+		if len(tail) != 0 {
+			timeSpans = append(timeSpans, tail...)
 		}
 
 		return mergeAdjacent(timeSpans, 0)
@@ -145,10 +143,7 @@ func mt4ToEt6(src map[string]string) map[string][]string {
 	return dst
 }
 
-func main() {
-	mt4 := map[string]string{"0": "0:0-0:3,3:0-5:0,23:0-24:0", "1": "0:0-12:0,13:0-24:0,0:0-0:0", "2": "9:0-9:5,12:0-13:0,23:0-24:0", "3": "12:0-20:0,20:10-21:3,22:0-24:0",}
-
-	// et6 = mt4 - 3
+func Mt4ToEt6(mt4 map[string]string) map[string][]string {
 	et6 := mt4ToEt6(mt4)
 
 	dst := map[string][]string{}
@@ -161,13 +156,35 @@ func main() {
 	dst["5"] = mergeAdjacent(et6["5"], 0)
 	dst["6"] = mergeAdjacent(et6["6"], 0)
 
-	fmt.Println(dst)
-
 	for i := range dst {
 		toEt6String(dst[i])
 	}
 
-
-	// et6 need currently.
-	fmt.Println(dst)
+	return dst
 }
+
+//func main() {
+//
+//	// et6 = mt4 - 3
+//	et6 := mt4ToEt6(mt4)
+//
+//	dst := map[string][]string{}
+//
+//	dst["0"] = mergeAdjacent(et6["0"], 0)
+//	dst["1"] = mergeAdjacent(et6["1"], 0)
+//	dst["2"] = mergeAdjacent(et6["2"], 0)
+//	dst["3"] = mergeAdjacent(et6["3"], 0)
+//	dst["4"] = mergeAdjacent(et6["4"], 0)
+//	dst["5"] = mergeAdjacent(et6["5"], 0)
+//	dst["6"] = mergeAdjacent(et6["6"], 0)
+//
+//	fmt.Println(dst)
+//
+//	for i := range dst {
+//		toEt6String(dst[i])
+//	}
+//
+//
+//	// et6 need currently.
+//	fmt.Println(dst)
+//}
