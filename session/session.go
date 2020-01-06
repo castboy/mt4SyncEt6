@@ -46,7 +46,7 @@ func sub3Hour(timeSpan string) (preDay string, thisDay string) {
 		return fmt.Sprintf("%d:%s-%d:%s", fromHourSub3, fromHM[1], toHourSub3, toHM[1]), ""
 	}
 
-	return fmt.Sprintf("%d:%s-%d:%s", fromHourSub3, fromHM[1], 24, toHM[1]), fmt.Sprintf("%d:%s-%d:%s", 0, fromHM[1], toHourSub3, toHM[1])
+	return fmt.Sprintf("%d:%s-%d:%s", fromHourSub3, fromHM[1], 24, toHM[1]), fmt.Sprintf("%d:%d-%d:%s", 0, 0, toHourSub3, toHM[1])
 }
 
 // 20:0-21:0 21:0-24:0 -> 20:0-24:0
