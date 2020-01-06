@@ -1,14 +1,15 @@
 package mt4SyncEt6
 
 import (
+	"fmt"
 	"mt4SyncEt6/decimal"
 	"mt4SyncEt6/security"
 	"strconv"
 	"testing"
-	"fmt"
 )
 
 func TestGetGroup(t *testing.T) {
+	engine := GetEngine()
 	for _, v := range security.Groups {
 		k := " " + v + " "
 		grp := security.GetStringMap(k)
@@ -18,17 +19,20 @@ func TestGetGroup(t *testing.T) {
 		et6Group.Name = v
 		et6Group.DepositCurrency = grp["deposit_currency"]
 		et6Group.MarginStopOut, _ = decimal.NewFromString(grp["margin_stop_out"])
-		mm,_ := strconv.Atoi(grp["hedge_largeleg"])
-		et6Group.MarginMode=MarginCalcMode(mm)
+		mm, _ := strconv.Atoi(grp["hedge_largeleg"])
+		et6Group.MarginMode = MarginCalcMode(mm)
 
-		GroupToDB(et6Group)
+		_, err := engine.Table("account_group").Insert(et6Group)
+		if err != nil {
+			fmt.Println(err)
+		}
 
 		t.Log(v)
 	}
 }
 
 func TestGetSecurity(t *testing.T) {
-	engine:= GetEngine()
+	engine := GetEngine()
 	for _, v := range security.Groups {
 		k := " " + v + " "
 		secs := security.GetStringMap(k)
@@ -41,7 +45,7 @@ func TestGetSecurity(t *testing.T) {
 			sec := security.GetStringMap(" manager " + "." + k)
 
 			et6Sec := ConGroupSec{}
-			et6Sec.GroupId,_ = strconv.Atoi(secs["id"])
+			et6Sec.GroupId, _ = strconv.Atoi(secs["id"])
 			et6Sec.EnableSecurity, _ = strconv.Atoi(sec["enable"])
 			et6Sec.EnableTrade, _ = strconv.Atoi(sec["trade"])
 			et6Sec.LotMin, _ = decimal.NewFromString(sec["lot_min"])
@@ -51,9 +55,9 @@ func TestGetSecurity(t *testing.T) {
 			et6Sec.Commission, _ = decimal.NewFromString(sec["comm_base"])
 
 			sql := fmt.Sprintf("select `id` FROM security WHERE `security_name`='%s'", k)
-			row ,_:= engine.QueryString(sql)
+			row, _ := engine.QueryString(sql)
 
-			et6Sec.SecurityId,_ = strconv.Atoi(row[0]["id"])
+			et6Sec.SecurityId, _ = strconv.Atoi(row[0]["id"])
 
 			_, err := engine.Table("con_group_sec").Insert(et6Sec)
 			if err != nil {
@@ -63,4 +67,3 @@ func TestGetSecurity(t *testing.T) {
 		}
 	}
 }
-

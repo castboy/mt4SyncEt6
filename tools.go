@@ -14,17 +14,6 @@ func GetEngine() *xorm.Engine {
 	return enginEt6
 }
 
-func GroupToDB(v AccountGroup) {
-	enginEt6, err := NewET6EngineXorm()
-	if err != nil {
-		return
-	}
-	_, err = enginEt6.Table("account_group").Insert(v)
-	if err != nil {
-		fmt.Println(err)
-	}
-}
-
 func SessionToDB(v Et6Session) {
 	enginEt6, err := NewET6EngineXorm()
 	if err != nil {
