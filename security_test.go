@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
-func TestMt4ToEt6(t *testing.T) {
-
+func TestGetGroup(t *testing.T) {
+	a:=security.GetGroup()
+	fmt.Println(a)
 }
