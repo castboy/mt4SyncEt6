@@ -5,9 +5,9 @@ import (
 	"github.com/spf13/viper"
 )
 
-var grpCfg  = viper.New()
-var secCfg  = viper.New()
-var Groups  []string
+var grpCfg = viper.New()
+var secCfg = viper.New()
+var Groups []string
 
 func init() {
 	grpCfg.SetConfigName("group")
@@ -36,4 +36,3 @@ func GetStringMap(k string) map[string]string {
 	v := secCfg.GetStringMapString(k)
 	return v
 }
-
