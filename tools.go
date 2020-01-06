@@ -9,6 +9,17 @@ import (
 	"time"
 )
 
+func GroupToDB(v AccountGroup) {
+	enginEt6, err := NewET6EngineXorm()
+	if err != nil {
+		return
+	}
+	_, err = enginEt6.Table("account_group").Insert(v)
+	if err!=nil{
+		fmt.Println("err")
+	}
+}
+
 func SessionToDB(v Et6Session){
 	enginEt6,err:=NewET6EngineXorm()
 	if err!=nil{
@@ -114,6 +125,22 @@ type Session struct {
 	Weekday  time.Weekday `xorm:"weekday"`
 	TimeSpan string       `xorm:"time_span"`
 }
+
+type AccountGroup struct {
+	ID              int             `xorm:"id autoincr"`
+	Name            string          `xorm:"name"`
+	DepositCurrency string          `xorm:"deposit_currency"`
+	MarginStopOut   decimal.Decimal `xorm:"margin_stop_out"`
+	MarginMode      MarginCalcMode  `xorm:"margin_mode"`
+}
+
+type MarginCalcMode int
+
+const (
+	DoubleLegs MarginCalcMode = iota
+	LargerLeg
+	NetLeg
+)
 
 type SessionType int
 
