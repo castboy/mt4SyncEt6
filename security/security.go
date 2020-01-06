@@ -32,12 +32,8 @@ func init() {
 	Groups = grpCfg.GetStringSlice("group")
 }
 
-func GetGroup(k string) map[string]string {
+func GetStringMap(k string) map[string]string {
 	v := secCfg.GetStringMapString(k)
 	return v
 }
 
-func GetSecurity() map[string]string {
-	v := secCfg.GetStringMapString(" manager ")
-	return v
-}
