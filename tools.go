@@ -65,8 +65,8 @@ func SessionToDB(v Et6Session) {
 
 func NewET6EngineXorm() (*xorm.Engine, error) {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
-		"root", "123456", "localhost",
-		"3306", "trading_system")
+		"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
+		"3306","trading_system")
 
 	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
 	if err != nil {
