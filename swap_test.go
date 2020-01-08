@@ -14,8 +14,8 @@ func TestSwap(t *testing.T) {
 
 	engine := GetEngine()
 	for _, v := range swaps {
-		sql := "update source set swap_long = ?,swap_short = ? where source = ?"
-		_, err := engine.Exec(sql, v.SwapLong, v.SwapShort, v.Symbol)
+		sql := "update source set swap_long = ?,swap_short = ?,source_cn = ?,swap_3_day = ? where source = ?"
+		_, err := engine.Exec(sql, v.SwapLong, v.SwapShort, v.SourceCN,v.Swap3Day, v.Symbol)
 		if err != nil {
 			fmt.Println(err)
 		}

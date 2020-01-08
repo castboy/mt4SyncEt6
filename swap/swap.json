@@ -1,325 +1,520 @@
 [{
   "symbol": "AUDCAD",
+  "Swap3Days": "4",
+  "IsCFD": "False",
+  "symbol_cn": "澳元加元",
   "swap_long": -5.007,
   "swap_short": 0
 },
   {
     "symbol": "AUDCHF",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "澳元瑞郎",
     "swap_long": 1.8651,
     "swap_short": -3.7301
   },
   {
     "symbol": "AUDJPY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "澳元日元",
     "swap_long": 0.729,
     "swap_short": -2.8119
   },
   {
     "symbol": "AUDNZD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "澳元新西兰元",
     "swap_long": -3.6204,
     "swap_short": -2.1722
   },
   {
     "symbol": "AUDUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "澳元美元",
     "swap_long": -2.8531,
     "swap_short": 0.951
   },
   {
     "symbol": "AUDSGD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "澳元新加坡元",
     "swap_long": -4.0125,
     "swap_short": 1.4337
   },
   {
     "symbol": "CADCHF",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "加元瑞郎",
     "swap_long": 3.1042,
     "swap_short": -7.2429
   },
   {
     "symbol": "CADJPY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "加元日元",
     "swap_long": 1.9644,
     "swap_short": -6.5864
   },
   {
     "symbol": "CHFJPY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "瑞郎日元",
     "swap_long": -3.5675,
     "swap_short": 0.4653
   },
   {
     "symbol": "EURAUD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元澳元",
     "swap_long": -5.6518,
     "swap_short": 1.1304
   },
   {
     "symbol": "EURCHF",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元瑞郎",
     "swap_long": 0.759,
     "swap_short": -3.7948
   },
   {
     "symbol": "EURGBP",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元英镑",
     "swap_long": -2.9491,
     "swap_short": 0.5898
   },
   {
     "symbol": "EURJPY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元日元",
     "swap_long": -1.3561,
     "swap_short": -2.0342
   },
   {
     "symbol": "EURNZD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元新西兰元",
     "swap_long": -9.4285,
     "swap_short": 0
   },
   {
     "symbol": "EURUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元美元",
     "swap_long": -6.9659,
     "swap_short": 3.87
   },
   {
     "symbol": "EURCAD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元加元",
     "swap_long": -7.1312,
     "swap_short": -1.0187
   },
   {
     "symbol": "GBPAUD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "英镑澳元",
     "swap_long": -2.6617,
     "swap_short": -2.6617
   },
   {
     "symbol": "GBPCAD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "英镑加元",
     "swap_long": -9.5956,
     "swap_short": 0
   },
   {
     "symbol": "GBPUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "英镑美元",
     "swap_long": -5.4677,
     "swap_short": 1.8226
   },
   {
     "symbol": "GBPNZD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "英镑新西兰元",
     "swap_long": -6.9381,
     "swap_short": -4.163
   },
   {
     "symbol": "GBPJPY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "英镑日元",
     "swap_long": 1.3971,
     "swap_short": -5.3886
   },
   {
     "symbol": "GBPCHF",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "英镑瑞郎",
     "swap_long": 3.5742,
     "swap_short": -7.1486
   },
   {
     "symbol": "NZDCAD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "新西兰元加元",
     "swap_long": -4.2019,
     "swap_short": -0.6003
   },
   {
     "symbol": "NZDCHF",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "新西兰元瑞郎",
     "swap_long": 1.3416,
     "swap_short": -4.9191
   },
   {
     "symbol": "NZDJPY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "新西兰元日元",
     "swap_long": 0.1997,
     "swap_short": -4.195
   },
   {
     "symbol": "NZDUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "新西兰元美元",
     "swap_long": -3.1924,
     "swap_short": -0.4561
   },
   {
     "symbol": "USDCNH",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元人民币",
     "swap_long": -104.9839,
     "swap_short": -11.6651
   },
   {
     "symbol": "USDCAD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元加元",
     "swap_long": -3.6562,
     "swap_short": -3.6562
   },
   {
     "symbol": "USDCHF",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元瑞郎",
     "swap_long": 5.4476,
     "swap_short": -8.1713
   },
   {
     "symbol": "USDHKD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元港币",
     "swap_long": -70.2908,
     "swap_short": -59.4768
   },
   {
     "symbol": "USDJPY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元日元",
     "swap_long": 4.1064,
     "swap_short": -7.1483
   },
   {
     "symbol": "USDMXN",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元墨西哥比索",
     "swap_long": -460.3595,
     "swap_short": 144.6844
   },
   {
     "symbol": "USDPLN",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元波兰兹罗提",
     "swap_long": -29.1979,
     "swap_short": -34.5066
   },
   {
     "symbol": "USDSGD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元新加坡元",
     "swap_long": -2.0939,
     "swap_short": -1.6721
   },
   {
     "symbol": "USDTRY",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "美元土耳其里拉",
     "swap_long": -200.3391,
     "swap_short": 102.2137
   },
   {
     "symbol": "EURPLN",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "欧元波兰兹罗提",
     "swap_long": -23.6671,
     "swap_short": 11.8337
   },
   {
     "symbol": "XAUUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "黄金",
     "swap_long": -11.2734,
     "swap_short": 3.0746
   },
   {
     "symbol": "XAGUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "白银",
     "swap_long": -12.9732,
     "swap_short": 3.5382
   },
   {
     "symbol": "XNGUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "天然气",
     "swap_long": 14.4021,
     "swap_short": -21.811
   },
   {
     "symbol": "XBRUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "布伦特原油",
     "swap_long": 19.2147,
     "swap_short": -29.4352
   },
   {
     "symbol": "XTIUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "西德州原油",
     "swap_long": 3.788,
     "swap_short": -6.249
   },
   {
     "symbol": "EUSTX50",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "欧元区股指",
     "swap_long": -21.3156,
     "swap_short": -21.3156
   },
   {
     "symbol": "GER30",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "德国股指",
     "swap_long": -74.986,
     "swap_short": -74.986
   },
   {
     "symbol": "HK50",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "恒生指数",
     "swap_long": -193.3296,
     "swap_short": -193.3296
   },
   {
     "symbol": "JPN225",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "日本股指",
     "swap_long": -159.5933,
     "swap_short": -172.8873
   },
   {
     "symbol": "NAS100",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "纳斯达克100",
     "swap_long": -100.274,
     "swap_short": -17.694
   },
   {
     "symbol": "US30",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "道琼斯工业指数",
     "swap_long": -332.21,
     "swap_short": -58.62
   },
   {
     "symbol": "USA500",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "标普500",
     "swap_long": -30.142,
     "swap_short": -15.703
   },
   {
     "symbol": "SPA35",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "西班牙股指",
     "swap_long": -53.9147,
     "swap_short": -53.9147
   },
   {
     "symbol": "AUS200",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "澳洲股指",
     "swap_long": -139.733,
     "swap_short": -59.8856
   },
   {
     "symbol": "UK100",
+    "Swap3Days": "4",
+    "IsCFD": "True",
+    "symbol_cn": "英国富时100",
     "swap_long": -37.3987,
     "swap_short": -20.1384
   },
   {
     "symbol": "D30EUR",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -80.31,
     "swap_short": -80.31
   },
   {
     "symbol": "U30USD",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -333.5,
     "swap_short": -17.55
   },
   {
     "symbol": "200AUD",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -64.93,
     "swap_short": -16.23
   },
   {
     "symbol": "H33HKD",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -336.75,
     "swap_short": -17.72
   },
   {
     "symbol": "225JPY",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -149.91,
     "swap_short": -162.4
   },
   {
     "symbol": "E50EUR",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -22.31,
     "swap_short": -22.31
   },
   {
     "symbol": "E35EUR",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -62.31,
     "swap_short": -62.31
   },
   {
     "symbol": "SPXUSD",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -36.32,
     "swap_short": -1.91
   },
   {
     "symbol": "100GBP",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -63.31,
     "swap_short": -34.09
   },
   {
     "symbol": "NASUSD",
+    "Swap3Days": "1",
+    "IsCFD": "True",
+    "symbol_cn": "",
     "swap_long": -93.65,
     "swap_short": -4.93
   },
   {
     "symbol": "BTCUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "比特币",
     "swap_long": -305.85,
     "swap_short": -241.94
   },
   {
     "symbol": "ETHUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "以太坊",
     "swap_long": -5.57,
     "swap_short": -4.41
   },
   {
     "symbol": "RPLUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "瑞波币",
     "swap_long": -8.32,
     "swap_short": -6.58
   },
   {
     "symbol": "LTCUSD",
+    "Swap3Days": "4",
+    "IsCFD": "False",
+    "symbol_cn": "莱特币",
     "swap_long": -17.08,
     "swap_short": -13.5
   }
