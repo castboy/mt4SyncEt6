@@ -1,0 +1,327 @@
+[{
+  "symbol": "AUDCAD",
+  "swap_long": -5.007,
+  "swap_short": 0
+},
+  {
+    "symbol": "AUDCHF",
+    "swap_long": 1.8651,
+    "swap_short": -3.7301
+  },
+  {
+    "symbol": "AUDJPY",
+    "swap_long": 0.729,
+    "swap_short": -2.8119
+  },
+  {
+    "symbol": "AUDNZD",
+    "swap_long": -3.6204,
+    "swap_short": -2.1722
+  },
+  {
+    "symbol": "AUDUSD",
+    "swap_long": -2.8531,
+    "swap_short": 0.951
+  },
+  {
+    "symbol": "AUDSGD",
+    "swap_long": -4.0125,
+    "swap_short": 1.4337
+  },
+  {
+    "symbol": "CADCHF",
+    "swap_long": 3.1042,
+    "swap_short": -7.2429
+  },
+  {
+    "symbol": "CADJPY",
+    "swap_long": 1.9644,
+    "swap_short": -6.5864
+  },
+  {
+    "symbol": "CHFJPY",
+    "swap_long": -3.5675,
+    "swap_short": 0.4653
+  },
+  {
+    "symbol": "EURAUD",
+    "swap_long": -5.6518,
+    "swap_short": 1.1304
+  },
+  {
+    "symbol": "EURCHF",
+    "swap_long": 0.759,
+    "swap_short": -3.7948
+  },
+  {
+    "symbol": "EURGBP",
+    "swap_long": -2.9491,
+    "swap_short": 0.5898
+  },
+  {
+    "symbol": "EURJPY",
+    "swap_long": -1.3561,
+    "swap_short": -2.0342
+  },
+  {
+    "symbol": "EURNZD",
+    "swap_long": -9.4285,
+    "swap_short": 0
+  },
+  {
+    "symbol": "EURUSD",
+    "swap_long": -6.9659,
+    "swap_short": 3.87
+  },
+  {
+    "symbol": "EURCAD",
+    "swap_long": -7.1312,
+    "swap_short": -1.0187
+  },
+  {
+    "symbol": "GBPAUD",
+    "swap_long": -2.6617,
+    "swap_short": -2.6617
+  },
+  {
+    "symbol": "GBPCAD",
+    "swap_long": -9.5956,
+    "swap_short": 0
+  },
+  {
+    "symbol": "GBPUSD",
+    "swap_long": -5.4677,
+    "swap_short": 1.8226
+  },
+  {
+    "symbol": "GBPNZD",
+    "swap_long": -6.9381,
+    "swap_short": -4.163
+  },
+  {
+    "symbol": "GBPJPY",
+    "swap_long": 1.3971,
+    "swap_short": -5.3886
+  },
+  {
+    "symbol": "GBPCHF",
+    "swap_long": 3.5742,
+    "swap_short": -7.1486
+  },
+  {
+    "symbol": "NZDCAD",
+    "swap_long": -4.2019,
+    "swap_short": -0.6003
+  },
+  {
+    "symbol": "NZDCHF",
+    "swap_long": 1.3416,
+    "swap_short": -4.9191
+  },
+  {
+    "symbol": "NZDJPY",
+    "swap_long": 0.1997,
+    "swap_short": -4.195
+  },
+  {
+    "symbol": "NZDUSD",
+    "swap_long": -3.1924,
+    "swap_short": -0.4561
+  },
+  {
+    "symbol": "USDCNH",
+    "swap_long": -104.9839,
+    "swap_short": -11.6651
+  },
+  {
+    "symbol": "USDCAD",
+    "swap_long": -3.6562,
+    "swap_short": -3.6562
+  },
+  {
+    "symbol": "USDCHF",
+    "swap_long": 5.4476,
+    "swap_short": -8.1713
+  },
+  {
+    "symbol": "USDHKD",
+    "swap_long": -70.2908,
+    "swap_short": -59.4768
+  },
+  {
+    "symbol": "USDJPY",
+    "swap_long": 4.1064,
+    "swap_short": -7.1483
+  },
+  {
+    "symbol": "USDMXN",
+    "swap_long": -460.3595,
+    "swap_short": 144.6844
+  },
+  {
+    "symbol": "USDPLN",
+    "swap_long": -29.1979,
+    "swap_short": -34.5066
+  },
+  {
+    "symbol": "USDSGD",
+    "swap_long": -2.0939,
+    "swap_short": -1.6721
+  },
+  {
+    "symbol": "USDTRY",
+    "swap_long": -200.3391,
+    "swap_short": 102.2137
+  },
+  {
+    "symbol": "EURPLN",
+    "swap_long": -23.6671,
+    "swap_short": 11.8337
+  },
+  {
+    "symbol": "XAUUSD",
+    "swap_long": -11.2734,
+    "swap_short": 3.0746
+  },
+  {
+    "symbol": "XAGUSD",
+    "swap_long": -12.9732,
+    "swap_short": 3.5382
+  },
+  {
+    "symbol": "XNGUSD",
+    "swap_long": 14.4021,
+    "swap_short": -21.811
+  },
+  {
+    "symbol": "XBRUSD",
+    "swap_long": 19.2147,
+    "swap_short": -29.4352
+  },
+  {
+    "symbol": "XTIUSD",
+    "swap_long": 3.788,
+    "swap_short": -6.249
+  },
+  {
+    "symbol": "EUSTX50",
+    "swap_long": -21.3156,
+    "swap_short": -21.3156
+  },
+  {
+    "symbol": "GER30",
+    "swap_long": -74.986,
+    "swap_short": -74.986
+  },
+  {
+    "symbol": "HK50",
+    "swap_long": -193.3296,
+    "swap_short": -193.3296
+  },
+  {
+    "symbol": "JPN225",
+    "swap_long": -159.5933,
+    "swap_short": -172.8873
+  },
+  {
+    "symbol": "NAS100",
+    "swap_long": -100.274,
+    "swap_short": -17.694
+  },
+  {
+    "symbol": "US30",
+    "swap_long": -332.21,
+    "swap_short": -58.62
+  },
+  {
+    "symbol": "USA500",
+    "swap_long": -30.142,
+    "swap_short": -15.703
+  },
+  {
+    "symbol": "SPA35",
+    "swap_long": -53.9147,
+    "swap_short": -53.9147
+  },
+  {
+    "symbol": "AUS200",
+    "swap_long": -139.733,
+    "swap_short": -59.8856
+  },
+  {
+    "symbol": "UK100",
+    "swap_long": -37.3987,
+    "swap_short": -20.1384
+  },
+  {
+    "symbol": "D30EUR",
+    "swap_long": -80.31,
+    "swap_short": -80.31
+  },
+  {
+    "symbol": "U30USD",
+    "swap_long": -333.5,
+    "swap_short": -17.55
+  },
+  {
+    "symbol": "200AUD",
+    "swap_long": -64.93,
+    "swap_short": -16.23
+  },
+  {
+    "symbol": "H33HKD",
+    "swap_long": -336.75,
+    "swap_short": -17.72
+  },
+  {
+    "symbol": "225JPY",
+    "swap_long": -149.91,
+    "swap_short": -162.4
+  },
+  {
+    "symbol": "E50EUR",
+    "swap_long": -22.31,
+    "swap_short": -22.31
+  },
+  {
+    "symbol": "E35EUR",
+    "swap_long": -62.31,
+    "swap_short": -62.31
+  },
+  {
+    "symbol": "SPXUSD",
+    "swap_long": -36.32,
+    "swap_short": -1.91
+  },
+  {
+    "symbol": "100GBP",
+    "swap_long": -63.31,
+    "swap_short": -34.09
+  },
+  {
+    "symbol": "NASUSD",
+    "swap_long": -93.65,
+    "swap_short": -4.93
+  },
+  {
+    "symbol": "BTCUSD",
+    "swap_long": -305.85,
+    "swap_short": -241.94
+  },
+  {
+    "symbol": "ETHUSD",
+    "swap_long": -5.57,
+    "swap_short": -4.41
+  },
+  {
+    "symbol": "RPLUSD",
+    "swap_long": -8.32,
+    "swap_short": -6.58
+  },
+  {
+    "symbol": "LTCUSD",
+    "swap_long": -17.08,
+    "swap_short": -13.5
+  }
+
+]

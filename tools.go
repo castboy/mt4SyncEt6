@@ -65,8 +65,8 @@ func SessionToDB(v Et6Session) {
 
 func NewET6EngineXorm() (*xorm.Engine, error) {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
-		"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
-		"3306","trading_system")
+			"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
+			"3306", "trading_system")
 
 	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
 	if err != nil {
@@ -79,6 +79,12 @@ func NewET6EngineXorm() (*xorm.Engine, error) {
 	//engine.TZLocation = time.UTC
 
 	return mt4Engine, nil
+}
+
+type SwapInfo struct {
+	Symbol    string          `json:"symbol"`
+	SwapLong  float64 `json:"swap_long"`
+	SwapShort float64 `json:"swap_short"`
 }
 
 type SessionInfo struct {
