@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f89f5b1-35d0-4cdf-af23-fd1b08f6a62a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/security_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/security_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools.go" beforeDir="false" afterPath="$PROJECT_DIR$/tools.go" afterDir="false" />
-    </list>
+    <list default="true" id="6f89f5b1-35d0-4cdf-af23-fd1b08f6a62a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,10 +11,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/session/session.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="e#17#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/session_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="197">
-              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+              <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
               <folding>
                 <element signature="e#20#87#0" expanded="true" />
               </folding>
@@ -25,32 +34,23 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/security_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="399">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
               <folding>
-                <element signature="e#20#97#0" expanded="true" />
+                <element signature="e#20#104#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Go/src/testing/testing.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="959" selection-start-line="959" selection-end-line="959" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Go/src/runtime/panic.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="678" selection-start-line="678" selection-end-line="678" />
             </state>
           </provider>
         </entry>
@@ -97,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/security/security.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
+            <state relative-caret-position="266">
               <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding>
                 <element signature="e#18#56#0" expanded="true" />
@@ -139,14 +139,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/session.go" />
-        <option value="$PROJECT_DIR$/session/session.go" />
-        <option value="$PROJECT_DIR$/session_test.go" />
         <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/security/security.json" />
         <option value="$PROJECT_DIR$/security/group.json" />
-        <option value="$PROJECT_DIR$/security/security.go" />
-        <option value="$PROJECT_DIR$/tools.go" />
         <option value="$PROJECT_DIR$/security_test.go" />
+        <option value="$PROJECT_DIR$/tools.go" />
+        <option value="$PROJECT_DIR$/session_test.go" />
+        <option value="$PROJECT_DIR$/session/session.go" />
+        <option value="$PROJECT_DIR$/security/security.go" />
       </list>
     </option>
   </component>
@@ -226,7 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestGetGroup in mt4SyncEt6">
+  <component name="RunManager" selected="Go Test.TestGetSecurity in mt4SyncEt6">
     <configuration name="go build session.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="mt4SyncEt6" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -282,8 +282,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestGetGroup in mt4SyncEt6" />
         <item itemvalue="Go Test.TestGetSecurity in mt4SyncEt6" />
+        <item itemvalue="Go Test.TestGetGroup in mt4SyncEt6" />
         <item itemvalue="Go Test.TestMt4ToEt6 in mt4SyncEt6" />
         <item itemvalue="Go Test.TestConvet in mt4SyncEt6" />
         <item itemvalue="Go Build.go build session.go" />
@@ -294,12 +294,6 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.06 at 12h 10m 30s.xml">
-      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.06 at 12h 14m 25s.xml">
-      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.06 at 12h 15m 28s.xml">
       <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -324,17 +318,22 @@
     <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.06 at 18h 43m 22s.xml">
       <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.06 at 18h 46m 08s.xml">
+      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetSecurity_in_mt4SyncEt6 - 2020.01.06 at 18h 50m 10s.xml">
+      <configuration name="TestGetSecurity in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17335244" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17335244" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36312848" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36312848" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -361,23 +360,6 @@
     <entry file="file://$PROJECT_DIR$/decimal/decimal.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/json.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/session/session.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#17#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/go.mod">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -395,16 +377,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/session_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding>
-            <element signature="e#20#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/security/group.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -419,16 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/security/security.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <element signature="e#18#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -439,12 +401,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/session_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <folding>
+            <element signature="e#20#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Go/src/testing/testing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="959" selection-start-line="959" selection-end-line="959" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Go/src/runtime/panic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="678" selection-start-line="678" selection-end-line="678" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session/session.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#17#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security/security.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <element signature="e#18#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/security_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="399">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
           <folding>
-            <element signature="e#20#97#0" expanded="true" />
+            <element signature="e#20#104#0" expanded="true" />
           </folding>
         </state>
       </provider>
