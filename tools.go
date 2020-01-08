@@ -9,12 +9,17 @@ import (
 	"time"
 )
 
-func SessionToDB(v Et6Session){
-	enginEt6,err:=NewET6EngineXorm()
-	if err!=nil{
+func GetEngine() *xorm.Engine {
+	enginEt6, _ := NewET6EngineXorm()
+	return enginEt6
+}
+
+func SessionToDB(v Et6Session) {
+	enginEt6, err := NewET6EngineXorm()
+	if err != nil {
 		return
 	}
-	sourceItem:=new(Source)
+	sourceItem := new(Source)
 	//_, err = enginEt6.Table("source").Where("source=?", v.Symbol_name).NoAutoCondition(true).Get(sourceItem)
 	hit, err := enginEt6.Table("source").Where("source=?", v.Symbol_name).NoAutoCondition(true).Get(sourceItem)
 	if !hit && err == nil {
@@ -22,50 +27,50 @@ func SessionToDB(v Et6Session){
 	}
 	//insert session to db
 	// map
-	for k,tradeSession:=range v.Trade_session{
-			//slice
-			for _,span:=range tradeSession{
-				sess:=Session{}
-				sess.Type=0
-				sess.SourceID=sourceItem.ID
-				weekDay,_:= strconv.Atoi(k)
-				if weekDay==0{
-					sess.Weekday=time.Sunday
-				}else if weekDay==1 {
-					sess.Weekday=time.Monday
-				}else if weekDay==2 {
-					sess.Weekday=time.Tuesday
-				}else if weekDay==3 {
-					sess.Weekday=time.Wednesday
-				}else if weekDay==4 {
-					sess.Weekday=time.Thursday
-				}else if weekDay==5 {
-					sess.Weekday=time.Friday
-				}else if weekDay==6 {
-					sess.Weekday=time.Saturday
-				}
-				sess.TimeSpan=span
+	for k, tradeSession := range v.Trade_session {
+		//slice
+		for _, span := range tradeSession {
+			sess := Session{}
+			sess.Type = 0
+			sess.SourceID = sourceItem.ID
+			weekDay, _ := strconv.Atoi(k)
+			if weekDay == 0 {
+				sess.Weekday = time.Sunday
+			} else if weekDay == 1 {
+				sess.Weekday = time.Monday
+			} else if weekDay == 2 {
+				sess.Weekday = time.Tuesday
+			} else if weekDay == 3 {
+				sess.Weekday = time.Wednesday
+			} else if weekDay == 4 {
+				sess.Weekday = time.Thursday
+			} else if weekDay == 5 {
+				sess.Weekday = time.Friday
+			} else if weekDay == 6 {
+				sess.Weekday = time.Saturday
+			}
+			sess.TimeSpan = span
 
-				//trade type
-				sess.Type=0
-				_, err = enginEt6.Table("session").Omit("id").InsertOne(sess)
-				sess.Type=1
-				_, err = enginEt6.Table("session").Omit("id").InsertOne(sess)
-				if err!=nil{
-					fmt.Println("err")
-				}
+			//trade type
+			sess.Type = 0
+			_, err = enginEt6.Table("session").Omit("id").InsertOne(sess)
+			sess.Type = 1
+			_, err = enginEt6.Table("session").Omit("id").InsertOne(sess)
+			if err != nil {
+				fmt.Println("err")
 			}
 		}
+	}
 }
 
-func NewET6EngineXorm()(*xorm.Engine,error){
+func NewET6EngineXorm() (*xorm.Engine, error) {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
 		"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
 		"3306","trading_system")
 
 	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 	mt4Engine.SetMaxOpenConns(100)
 	mt4Engine.SetMaxIdleConns(20)
@@ -76,15 +81,14 @@ func NewET6EngineXorm()(*xorm.Engine,error){
 	return mt4Engine, nil
 }
 
-
 type SessionInfo struct {
-	Symbol_name 	string				`json:"symbol_name"`
-	Trade_session   map[string]string   `json:"trade_session"`
+	Symbol_name   string            `json:"symbol_name"`
+	Trade_session map[string]string `json:"trade_session"`
 }
 
 type Et6Session struct {
-	Symbol_name 	string				`json:"symbol_name"`
-	Trade_session   map[string][]string   `json:"trade_session"`
+	Symbol_name   string              `json:"symbol_name"`
+	Trade_session map[string][]string `json:"trade_session"`
 }
 
 type Source struct {
@@ -115,12 +119,42 @@ type Session struct {
 	TimeSpan string       `xorm:"time_span"`
 }
 
+type AccountGroup struct {
+	ID              int             `xorm:"id autoincr"`
+	Name            string          `xorm:"name"`
+	DepositCurrency string          `xorm:"deposit_currency"`
+	MarginStopOut   decimal.Decimal `xorm:"margin_stop_out"`
+	MarginMode      MarginCalcMode  `xorm:"margin_mode"`
+}
+
+type ConGroupSec struct {
+	ID             int             `xorm:"id autoincr"`
+	GroupId        int             `xorm:"group_id"`
+	SecurityId     int             `xorm:"security_id"`
+	EnableSecurity int             `xorm:"enable_security"`
+	EnableTrade    int             `xorm:"enable_trade"`
+	LotMin         decimal.Decimal `xorm:"lot_min"`
+	LotMax         decimal.Decimal `xorm:"lot_max"`
+	LotStep        decimal.Decimal `xorm:"lot_step"`
+	SpreadDiff     int             `xorm:"spread_diff"`
+	Commission     decimal.Decimal `xorm:"commission"`
+}
+
+type MarginCalcMode int
+
+const (
+	DoubleLegs MarginCalcMode = iota
+	LargerLeg
+	NetLeg
+)
+
 type SessionType int
 
 const (
 	Quote SessionType = iota
 	Trade
 )
+
 type (
 	ProfitMode int
 	SwapType   int
@@ -144,7 +178,6 @@ const (
 	ByInterestOfCfds
 	ByInterestOfFutures
 )
-
 
 const (
 	SourceFx SourceType = iota

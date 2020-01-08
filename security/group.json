@@ -1,0 +1,23 @@
+{
+  "group": [
+    "TBRD-M00A",
+    "TBRD-M00AC-Tech",
+    "BRD",
+    "STP",
+    "STP_TW",
+    "TBRD_IG_Tech",
+    "TBRD_IG",
+    "BRD_IG",
+    "STP_IG",
+    "TBRD_GB",
+    "BRD_GB",
+    "STP_GB",
+    "TBRD_ISLAMIC",
+    "BRD_ISLAMIC",
+    "STP_ISLAMIC",
+    "TBRD_GB_Tech",
+    "TBRD_ISLMC_Tech",
+    "TBRD_Case_Default",
+    "TBRD_Case_GBP"
+  ]
+}
