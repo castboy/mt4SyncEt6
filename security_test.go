@@ -27,7 +27,7 @@ func TestGetGroup(t *testing.T) {
 			fmt.Println(err)
 		}
 
-		t.Log(v)
+		t.Log(v,et6Group.ID)
 	}
 }
 

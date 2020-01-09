@@ -1,0 +1,14 @@
+*.exe
+*.exe~
+*.test
+*.log
+*.log.*
+.DS_Store
+*.swp
+*.swo
+
+vendor/
+tmp/
+
+.idea/
+debug
