@@ -85,7 +85,7 @@ type SwapInfo struct {
 	Symbol    string  `json:"symbol"`
 	SwapLong  float64 `json:"swap_long"`
 	SwapShort float64 `json:"swap_short"`
-	Swap3Day  string   `json:"Swap3Days"`
+	Swap3Day  string  `json:"Swap3Days"`
 	SourceCN  string  `json:"symbol_cn"`
 }
 

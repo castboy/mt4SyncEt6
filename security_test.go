@@ -27,7 +27,7 @@ func TestGetGroup(t *testing.T) {
 			fmt.Println(err)
 		}
 
-		t.Log(v)
+		t.Log(v,et6Group.ID)
 	}
 }
 
@@ -45,12 +45,16 @@ func TestGetSecurity(t *testing.T) {
 			sec := security.GetStringMap(" manager " + "." + k)
 
 			et6Sec := ConGroupSec{}
+			size := *decimal.NewDecFromInt(100)
 			et6Sec.GroupId, _ = strconv.Atoi(secs["id"])
 			et6Sec.EnableSecurity, _ = strconv.Atoi(sec["enable"])
 			et6Sec.EnableTrade, _ = strconv.Atoi(sec["trade"])
-			et6Sec.LotMin, _ = decimal.NewFromString(sec["lot_min"])
-			et6Sec.LotMax, _ = decimal.NewFromString(sec["lot_max"])
-			et6Sec.LotStep, _ = decimal.NewFromString(sec["lot_step"])
+			lotMin, _ := decimal.NewFromString(sec["lot_min"])
+			lotMax, _ := decimal.NewFromString(sec["lot_max"])
+			lotStep, _ := decimal.NewFromString(sec["lot_step"])
+			et6Sec.LotMin = lotMin.Div(size)
+			et6Sec.LotMax = lotMax.Div(size)
+			et6Sec.LotStep = lotStep.Div(size)
 			et6Sec.SpreadDiff, _ = strconv.Atoi(sec["spread_diff"])
 			et6Sec.Commission, _ = decimal.NewFromString(sec["comm_base"])
 
