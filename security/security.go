@@ -13,12 +13,10 @@ func init() {
 	grpCfg.SetConfigName("group")
 	grpCfg.AddConfigPath(".")
 	grpCfg.AddConfigPath("./security")
-	secCfg.WatchConfig()
 
 	secCfg.SetConfigName("security")
 	secCfg.AddConfigPath(".")
 	secCfg.AddConfigPath("./security")
-	secCfg.WatchConfig()
 
 	err := grpCfg.ReadInConfig()
 	if err != nil {
