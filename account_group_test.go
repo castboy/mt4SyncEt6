@@ -12,7 +12,16 @@ import (
 func TestAccountGroup(t *testing.T) {
 	engine := GetEngine()
 
-	sql := "Truncate Table account_group"
+	oldId := make(map[string]int)
+	newId := make(map[string]int)
+	sql := "select `id` ,`name` from account_group"
+	row, _ := engine.QueryString(sql)
+	for _, v := range row {
+		k := v[`name`]
+		oldId[" "+k+" "], _ = strconv.Atoi(v[`id`])
+	}
+
+	sql = "Truncate Table account_group"
 	_, err := engine.Exec(sql)
 	if err != nil {
 		fmt.Println(err)
@@ -35,6 +44,17 @@ func TestAccountGroup(t *testing.T) {
 			fmt.Println(err)
 		}
 
+		newId[k] = et6Group.ID
 		t.Log(v, et6Group.ID)
+	}
+
+	for k, v := range oldId {
+		if newId[k] != v {
+			sql = fmt.Sprintf("UPDATE account SET group_id = %d WHERE group_id = %d", newId[k], oldId[k])
+			_, err := engine.Exec(sql)
+			if err != nil {
+				fmt.Println(err)
+			}
+		}
 	}
 }
