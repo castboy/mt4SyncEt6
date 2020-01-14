@@ -81,12 +81,52 @@ func NewET6EngineXorm() (*xorm.Engine, error) {
 	return mt4Engine, nil
 }
 
+func NewProduceEngineXorm() (*xorm.Engine, error) {
+	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
+		"et6_ro", "OhQu9Unei7iezair4Oe0", "rm-f2z35ztaojigwx291ro.mysql.eu-west-1.rds.aliyuncs.com",
+		"3306", "trading_system")
+
+	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
+	if err != nil {
+		return nil, err
+	}
+	mt4Engine.SetMaxOpenConns(100)
+	mt4Engine.SetMaxIdleConns(20)
+	mt4Engine.SetConnMaxLifetime(1800 * time.Second)
+	//engine.DatabaseTZ = time.UTC
+	//engine.TZLocation = time.UTC
+
+	return mt4Engine, nil
+}
+func NewLocalhostEngineXorm() (*xorm.Engine, error) {
+	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
+		"root", "123456789", "localhost",
+		"3306", "trading_system")
+
+	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
+	if err != nil {
+		return nil, err
+	}
+	mt4Engine.SetMaxOpenConns(100)
+	mt4Engine.SetMaxIdleConns(20)
+	mt4Engine.SetConnMaxLifetime(1800 * time.Second)
+	//engine.DatabaseTZ = time.UTC
+	//engine.TZLocation = time.UTC
+
+	return mt4Engine, nil
+}
+
 type SwapInfo struct {
 	Symbol    string  `json:"symbol"`
 	SwapLong  float64 `json:"swap_long"`
 	SwapShort float64 `json:"swap_short"`
 	Swap3Day  string  `json:"Swap3Days"`
 	SourceCN  string  `json:"symbol_cn"`
+}
+
+type CurrencyInfo struct {
+	Symbol   string `json:"symbol"`
+	Currency string `json:"currency"`
 }
 
 type SessionInfo struct {
@@ -148,6 +188,20 @@ type ConGroupSec struct {
 	Commission     decimal.Decimal `xorm:"commission"`
 }
 
+// Symbol represents a instance of symbol
+type Symbol struct {
+	ID            int             `json:"id" xorm:"id autoincr"`
+	Index         int             `json:"index" xorm:"index"`
+	Symbol        string          `json:"symbol" xorm:"symbol"`
+	SourceID      int             `json:"source_id" xorm:"source_id"`
+	EnableTrade   SymbTradeRight  `json:"enable_trade" xorm:"enable_trade"`
+	Leverage      int32           `json:"leverage" xorm:"-"`
+	SecurityID    int             `json:"security_id" xorm:"security_id"`
+	MarginInitial decimal.Decimal `json:"margin_initial" xorm:"margin_initial"`
+	MarginDivider decimal.Decimal `json:"margin_divider" xorm:"margin_divider"`
+	Percentage    decimal.Decimal `json:"percentage" xorm:"percentage"`
+}
+
 type MarginCalcMode int
 
 const (
@@ -199,4 +253,12 @@ const (
 	ProfitForex ProfitMode = iota
 	ProfitCfd
 	ProfitFutures
+)
+
+type SymbTradeRight int
+
+const (
+	NotSupport SymbTradeRight = iota
+	OnlyClose
+	OpenClose
 )
