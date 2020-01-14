@@ -2,47 +2,32 @@ package mt4SyncEt6
 
 import (
 	"fmt"
+	"mt4SyncEt6/account_group"
+	"mt4SyncEt6/con_group_sec"
 	"mt4SyncEt6/decimal"
-	"mt4SyncEt6/security"
 	"strconv"
 	"testing"
 )
 
-func TestGetGroup(t *testing.T) {
+func TestConGroupSec(t *testing.T) {
 	engine := GetEngine()
-	for _, v := range security.Groups {
-		k := " " + v + " "
-		grp := security.GetStringMap(k)
 
-		et6Group := AccountGroup{}
-		et6Group.ID, _ = strconv.Atoi(grp["id"])
-		et6Group.Name = v
-		et6Group.DepositCurrency = grp["deposit_currency"]
-		et6Group.MarginStopOut, _ = decimal.NewFromString(grp["margin_stop_out"])
-		mm, _ := strconv.Atoi(grp["hedge_largeleg"])
-		et6Group.MarginMode = MarginCalcMode(mm)
-
-		_, err := engine.Table("account_group").Insert(et6Group)
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		t.Log(v,et6Group.ID)
+	sql := "Truncate Table con_group_sec"
+	_, err := engine.Exec(sql)
+	if err != nil {
+		fmt.Println(err)
 	}
-}
 
-func TestGetSecurity(t *testing.T) {
-	engine := GetEngine()
-	for _, v := range security.Groups {
+	for _, v := range account_group.Groups {
 		k := " " + v + " "
-		secs := security.GetStringMap(k)
+		secs := con_group_sec.GetSecStringMap(k)
 
 		for k, _ := range secs {
 			if k == "id" || k == "deposit_currency" || k == "margin_stop_out" || k == "hedge_largeleg" {
 				continue
 			}
 
-			sec := security.GetStringMap(" manager " + "." + k)
+			sec := con_group_sec.GetSecStringMap(" manager " + "." + k)
 
 			et6Sec := ConGroupSec{}
 			size := *decimal.NewDecFromInt(100)
@@ -59,11 +44,14 @@ func TestGetSecurity(t *testing.T) {
 			et6Sec.Commission, _ = decimal.NewFromString(sec["comm_base"])
 
 			sql := fmt.Sprintf("select `id` FROM security WHERE `security_name`='%s'", k)
-			row, _ := engine.QueryString(sql)
+			row, err := engine.QueryString(sql)
+			if row == nil {
+				fmt.Println(k)
+				continue
+			}
+			et6Sec.SecurityId, err = strconv.Atoi(row[0]["id"])
 
-			et6Sec.SecurityId, _ = strconv.Atoi(row[0]["id"])
-
-			_, err := engine.Table("con_group_sec").Insert(et6Sec)
+			_, err = engine.Table("con_group_sec").Insert(et6Sec)
 			if err != nil {
 				fmt.Println(err)
 			}
