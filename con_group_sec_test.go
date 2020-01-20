@@ -18,16 +18,19 @@ func TestConGroupSec(t *testing.T) {
 		fmt.Println(err)
 	}
 
-	for _, v := range account_group.Groups {
-		k := " " + v + " "
-		secs := con_group_sec.GetSecStringMap(k)
+	for _, group := range account_group.Groups {
+		secs := con_group_sec.GetSecStringMap(group)
+		if len(secs) == 0 {
+			group = " " + group + " "
+			secs = con_group_sec.GetSecStringMap(group)
+		}
 
-		for k, _ := range secs {
-			if k == "id" || k == "deposit_currency" || k == "margin_stop_out" || k == "hedge_largeleg" {
+			for field, _ := range secs {
+			if field == "id" || field == "deposit_currency" || field == "margin_stop_out" || field == "hedge_largeleg" {
 				continue
 			}
 
-			sec := con_group_sec.GetSecStringMap(" manager " + "." + k)
+			sec := con_group_sec.GetSecStringMap(group + "." + field)
 
 			et6Sec := ConGroupSec{}
 			size := *decimal.NewDecFromInt(100)
@@ -43,10 +46,10 @@ func TestConGroupSec(t *testing.T) {
 			et6Sec.SpreadDiff, _ = strconv.Atoi(sec["spread_diff"])
 			et6Sec.Commission, _ = decimal.NewFromString(sec["comm_base"])
 
-			sql := fmt.Sprintf("select `id` FROM security WHERE `security_name`='%s'", k)
+			sql := fmt.Sprintf("select `id` FROM security WHERE `security_name`='%s'", field)
 			row, err := engine.QueryString(sql)
 			if row == nil {
-				fmt.Println(k)
+				fmt.Println(field)
 				continue
 			}
 			et6Sec.SecurityId, err = strconv.Atoi(row[0]["id"])
@@ -55,7 +58,7 @@ func TestConGroupSec(t *testing.T) {
 			if err != nil {
 				fmt.Println(err)
 			}
-			t.Log(k, et6Sec)
+			t.Log(field, et6Sec)
 		}
 	}
 }
