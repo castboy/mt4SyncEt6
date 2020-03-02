@@ -1,0 +1,2172 @@
+package holiday
+
+var JsonHoliday = `[
+  {
+    "index": 2595,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "All",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2596,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCAD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2597,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCAD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2598,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCAD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2599,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCAD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2600,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCHF",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2601,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCHF50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2602,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCHF200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2603,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCHF400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2604,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDJPY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2605,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDJPY50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2606,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDJPY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2607,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDJPY400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2608,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDNZD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2609,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDNZD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2610,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDNZD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2611,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDNZD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2612,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2613,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDUSD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2614,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2615,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDUSD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2616,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADCHF",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2617,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADCHF50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2618,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADCHF200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2619,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADCHF400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2620,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADJPY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2621,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADJPY50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2622,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADJPY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2623,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADJPY400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2624,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CHFJPY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2625,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CHFJPY50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2626,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CHFJPY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2627,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CHFJPY400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2628,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURAUD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2629,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURAUD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2630,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURAUD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2631,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURAUD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2632,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCHF",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2633,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCHF50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2634,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCHF200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2635,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCHF400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2636,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURGBP",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2637,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURGBP50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2638,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURGBP200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2639,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURGBP400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2640,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURJPY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2641,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURJPY50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2642,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURJPY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2643,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURJPY400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2644,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURNZD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2645,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURNZD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2646,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURNZD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2647,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURNZD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2648,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2649,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURUSD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2650,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2651,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURUSD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2652,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCAD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2653,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCAD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2654,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCAD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2655,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCAD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2656,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPAUD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2657,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPAUD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2658,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPAUD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2659,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPAUD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2660,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCAD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2661,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCAD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2662,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCAD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2663,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCAD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2664,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2665,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPUSD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2666,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2667,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPUSD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2668,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPNZD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2669,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPNZD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2670,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPNZD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2671,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPNZD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2672,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPJPY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2673,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPJPY50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2674,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPJPY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2675,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPJPY400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2676,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCHF",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2677,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCHF50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2678,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCHF200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2679,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCHF400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2680,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCAD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2681,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCAD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2682,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCAD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2683,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCAD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2684,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCHF",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2685,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCHF50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2686,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCHF200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2687,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCHF400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2688,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDJPY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2689,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDJPY50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2690,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDJPY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2691,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDJPY400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2692,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2693,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDUSD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2694,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2695,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDUSD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2696,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCNH",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2697,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCNH50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2698,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCNH200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2699,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCNH400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2700,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCAD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2701,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCAD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2702,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCAD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2703,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCAD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2704,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCHF",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2705,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCHF50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2706,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCHF200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2707,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCHF400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2708,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDHKD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2709,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDHKD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2710,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDJPY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2711,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDJPY50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2712,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDJPY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2713,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDJPY400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2714,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDSGD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2715,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDSGD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2716,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDSGD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2717,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURPLN",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2718,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURPLN200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2719,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDMXN",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2720,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDMXN200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2721,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDPLN",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2722,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDPLN200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2723,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDSGD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2724,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDSGD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2725,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDTRY",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2726,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDTRY200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2727,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAUUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2728,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAUUSD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2729,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAUUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2730,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAUUSD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2731,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAGUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2732,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAGUSD50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2733,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAGUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2734,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAGUSD400",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2735,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XNGUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2736,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XNGUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2737,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XBRUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2738,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XBRUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2739,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XTIUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2740,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XTIUSD200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2741,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUS200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2742,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUS200_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2743,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EUSTX50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2744,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EUSTX50_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2745,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GER30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2746,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GER30_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2747,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "HK50",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2748,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "HK50_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2749,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "JPN225",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2750,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "JPN225_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2751,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "SPA35",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2752,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "SPA35_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2753,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NAS100",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2754,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NAS100_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2755,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "UK100",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2756,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "UK100_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2757,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "US30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2758,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "US30_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2759,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USA500",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2760,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USA500_200",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2761,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADCHF30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2762,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CADJPY30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2763,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "CHFJPY30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2764,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCAD30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2765,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURCHF30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2766,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURGBP30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2767,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURJPY30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2768,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURUSD30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2769,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCAD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2770,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCAD30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2771,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPCHF30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2772,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPJPY30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2773,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPUSD30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2774,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCAD30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2775,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCHF30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2776,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDJPY30",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2777,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCAD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2778,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDCHF20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2779,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDJPY20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2780,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDNZD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2781,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDSGD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2782,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "AUDUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2783,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURAUD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2784,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURNZD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2785,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "EURPLN20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2786,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPAUD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2787,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "GBPNZD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2788,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCAD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2789,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDCHF20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2790,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDJPY20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2791,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NZDUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2792,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDCNH20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2793,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDMXN20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2794,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDPLN20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2795,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDSGD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2796,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDTRY20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2797,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "USDHKD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2798,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAUUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2799,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XAGUSD10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2800,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XNGUSD10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2801,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XBRUSD10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2802,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "XTIUSD10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2803,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "E50EUR10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2804,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "E50EUR20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2805,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "D30EUR20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2806,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "H33HKD10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2807,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "225JPY20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2808,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NASUSD10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2809,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "NASUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2810,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "U30USD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2811,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "SPXUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2812,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "200AUD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2813,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "100GBP20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2814,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "E35EUR10",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2815,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "BTCUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2816,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "BTCUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2817,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "ETHUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2818,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "ETHUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2819,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "RPLUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2820,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "RPLUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2821,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "LTCUSD",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2822,
+    "date": "2020-01-01",
+    "from": 0,
+    "to": 0,
+    "symbol": "LTCUSD20",
+    "description": "New Years Day"
+  },
+  {
+    "index": 2823,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "US30",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2824,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "U30USD20",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2825,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "US30_200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2826,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "SPXUSD20",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2827,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "USA500",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2828,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "NAS100",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2829,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "NASUSD10",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2830,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "NASUSD20",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2831,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "NAS100_200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2832,
+    "date": "2020-01-20",
+    "from": 180,
+    "to": 1260,
+    "symbol": "225JPY20",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2833,
+    "date": "2020-01-20",
+    "from": 180,
+    "to": 1260,
+    "symbol": "JPN225",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2834,
+    "date": "2020-01-20",
+    "from": 180,
+    "to": 1260,
+    "symbol": "JPN225_200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2835,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAUUSD",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2836,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAGUSD",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2837,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAUUSD400",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2838,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAUUSD50",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2839,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAGUSD50",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2840,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAUUSD200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2841,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAGUSD200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2842,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAGUSD400",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2843,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAUUSD20",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2844,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1260,
+    "symbol": "XAGUSD10",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2845,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1245,
+    "symbol": "XNGUSD",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2846,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1245,
+    "symbol": "XNGUSD200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2847,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1245,
+    "symbol": "XNGUSD10",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2848,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1245,
+    "symbol": "XTIUSD",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2849,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1245,
+    "symbol": "XTIUSD200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2850,
+    "date": "2020-01-20",
+    "from": 120,
+    "to": 1245,
+    "symbol": "XTIUSD10",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2851,
+    "date": "2020-01-20",
+    "from": 240,
+    "to": 1245,
+    "symbol": "XBRUSD",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2852,
+    "date": "2020-01-20",
+    "from": 240,
+    "to": 1245,
+    "symbol": "XBRUSD200",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2853,
+    "date": "2020-01-20",
+    "from": 240,
+    "to": 1245,
+    "symbol": "XBRUSD10",
+    "description": "Martin Luther King Day"
+  },
+  {
+    "index": 2854,
+    "date": "2020-01-24",
+    "from": 255,
+    "to": 420,
+    "symbol": "H33HKD10",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2855,
+    "date": "2020-01-24",
+    "from": 255,
+    "to": 420,
+    "symbol": "HK50",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2856,
+    "date": "2020-01-24",
+    "from": 255,
+    "to": 420,
+    "symbol": "HK50_200",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2857,
+    "date": "2020-01-27",
+    "from": 550,
+    "to": 1439,
+    "symbol": "200AUD20",
+    "description": "Australia Day"
+  },
+  {
+    "index": 2858,
+    "date": "2020-01-27",
+    "from": 550,
+    "to": 1439,
+    "symbol": "AUS200",
+    "description": "Australia Day"
+  },
+  {
+    "index": 2859,
+    "date": "2020-01-27",
+    "from": 550,
+    "to": 1439,
+    "symbol": "AUS200_200",
+    "description": "Australia Day"
+  },
+  {
+    "index": 2860,
+    "date": "2020-01-27",
+    "from": 0,
+    "to": 0,
+    "symbol": "H33HKD10",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2861,
+    "date": "2020-01-27",
+    "from": 0,
+    "to": 0,
+    "symbol": "HK50",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2862,
+    "date": "2020-01-27",
+    "from": 0,
+    "to": 0,
+    "symbol": "HK50_200",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2863,
+    "date": "2020-01-28",
+    "from": 0,
+    "to": 0,
+    "symbol": "H33HKD10",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2864,
+    "date": "2020-01-28",
+    "from": 0,
+    "to": 0,
+    "symbol": "HK50",
+    "description": "Chinese New Year"
+  },
+  {
+    "index": 2865,
+    "date": "2020-01-28",
+    "from": 0,
+    "to": 0,
+    "symbol": "HK50_200",
+    "description": "Chinese New Year"
+  }
+]`

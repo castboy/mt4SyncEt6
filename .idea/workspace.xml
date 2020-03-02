@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f89f5b1-35d0-4cdf-af23-fd1b08f6a62a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/currency/currency.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency/currency.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/holiday/holiday.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security/group_dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security/securities_dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zmq/gozmq.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zmq/zmq4.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zmq_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json.go" beforeDir="false" afterPath="$PROJECT_DIR$/session/json.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/group.json" beforeDir="false" afterPath="$PROJECT_DIR$/security/group.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/security.json" beforeDir="false" afterPath="$PROJECT_DIR$/security/security.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/security_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/session_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools.go" beforeDir="false" afterPath="$PROJECT_DIR$/tools.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,86 +25,69 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/session_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-              <folding>
-                <element signature="e#20#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/json.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/security_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-              <folding>
-                <element signature="e#20#104#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/currency_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-              <folding>
-                <element signature="e#20#89#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swap/swap.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding>
-                <element signature="e#14#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
-              <folding>
-                <element signature="e#20#141#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/security/security.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6616085">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/security_test.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="370">
+                  <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#20#104#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tools.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="427">
+                  <caret line="171" column="17" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#20#141#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/security/security.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="928">
+                  <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/security/security.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="69">
+                  <caret line="2059" selection-start-line="2059" selection-end-line="2059" />
+                  <folding>
+                    <element signature="e#21#8492#0" />
+                    <element signature="e#8512#16876#0" />
+                    <element signature="e#16899#25348#0" />
+                    <element signature="e#25366#33827#0" />
+                    <element signature="e#33846#42309#0" />
+                    <element signature="e#42334#50792#0" />
+                    <element signature="e#50816#59267#0" />
+                    <element signature="e#59293#67744#0" />
+                    <element signature="e#67773#76225#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -131,13 +123,15 @@
         <option value="$PROJECT_DIR$/session_test.go" />
         <option value="$PROJECT_DIR$/session/session.go" />
         <option value="$PROJECT_DIR$/security/security.go" />
-        <option value="$PROJECT_DIR$/security_test.go" />
         <option value="$PROJECT_DIR$/security/swap.json" />
         <option value="$PROJECT_DIR$/swap/swap.go" />
         <option value="$PROJECT_DIR$/swap/swap.json" />
         <option value="$PROJECT_DIR$/tools.go" />
         <option value="$PROJECT_DIR$/swap_test.go" />
         <option value="$PROJECT_DIR$/currency_test.go" />
+        <option value="$PROJECT_DIR$/../../pkg/mod/github.com/alecthomas/gozmq@v0.0.0-20140622232202-d1b01a2df6b2/zmq_2_x.go" />
+        <option value="$PROJECT_DIR$/zmq_test.go" />
+        <option value="$PROJECT_DIR$/security_test.go" />
       </list>
     </option>
   </component>
@@ -169,6 +163,11 @@
               <item name="mt4SyncEt6" type="b2602c69:ProjectViewProjectNode" />
               <item name="mt4SyncEt6" type="462c0819:PsiDirectoryNode" />
               <item name="currency" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mt4SyncEt6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mt4SyncEt6" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mt4SyncEt6" type="b2602c69:ProjectViewProjectNode" />
@@ -214,18 +213,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestCurrency in mt4SyncEt6">
-    <configuration name="TestCurrency in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="mt4SyncEt6" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="mt4SyncEt6" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestCurrency$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestGetGroup in mt4SyncEt6">
     <configuration name="TestGetGroup in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="mt4SyncEt6" />
       <working_directory value="$PROJECT_DIR$" />
@@ -248,7 +236,7 @@
       <pattern value="^TestGetSecurity$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestMt4ToEt6 in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="Test_ZMQ in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="mt4SyncEt6" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -256,10 +244,10 @@
       <package value="mt4SyncEt6" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestMt4ToEt6$" />
+      <pattern value="^Test_ZMQ$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSwap in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="Test_gozmq in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="mt4SyncEt6" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -267,16 +255,27 @@
       <package value="mt4SyncEt6" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSwap$" />
+      <pattern value="^Test_gozmq$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_zmqRouoter in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="mt4SyncEt6" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="mt4SyncEt6" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_zmqRouoter$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestCurrency in mt4SyncEt6" />
-        <item itemvalue="Go Test.TestSwap in mt4SyncEt6" />
-        <item itemvalue="Go Test.TestGetSecurity in mt4SyncEt6" />
         <item itemvalue="Go Test.TestGetGroup in mt4SyncEt6" />
-        <item itemvalue="Go Test.TestMt4ToEt6 in mt4SyncEt6" />
+        <item itemvalue="Go Test.TestGetSecurity in mt4SyncEt6" />
+        <item itemvalue="Go Test.Test_gozmq in mt4SyncEt6" />
+        <item itemvalue="Go Test.Test_ZMQ in mt4SyncEt6" />
+        <item itemvalue="Go Test.Test_zmqRouoter in mt4SyncEt6" />
       </list>
     </recent_temporary>
   </component>
@@ -284,42 +283,41 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 17h 03m 51s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.17 at 16h 46m 41s.xml">
+      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 17h 04m 13s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.17 at 16h 48m 04s.xml">
+      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 17h 05m 02s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.17 at 16h 49m 23s.xml">
+      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 17h 05m 41s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetSecurity_in_mt4SyncEt6 - 2020.01.17 at 16h 50m 49s.xml">
+      <configuration name="TestGetSecurity in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 17h 07m 16s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetSecurity_in_mt4SyncEt6 - 2020.01.17 at 16h 52m 25s.xml">
+      <configuration name="TestGetSecurity in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 17h 07m 40s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetSecurity_in_mt4SyncEt6 - 2020.01.17 at 16h 52m 56s.xml">
+      <configuration name="TestGetSecurity in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 17h 11m 49s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetSecurity_in_mt4SyncEt6 - 2020.01.17 at 17h 06m 44s.xml">
+      <configuration name="TestGetSecurity in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 18h 54m 43s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.17 at 17h 22m 13s.xml">
+      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSwap_in_mt4SyncEt6 - 2020.01.08 at 18h 56m 30s.xml">
-      <configuration name="TestSwap in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.17 at 17h 23m 28s.xml">
+      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestCurrency_in_mt4SyncEt6 - 2020.01.10 at 15h 41m 50s.xml">
-      <configuration name="TestCurrency in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGetGroup_in_mt4SyncEt6 - 2020.01.17 at 17h 25m 00s.xml">
+      <configuration name="TestGetGroup in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13161659" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21387696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -361,29 +359,9 @@
     <entry file="file://$PROJECT_DIR$/go.sum">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../pkg/mod/github.com/spf13/viper@v1.6.1/viper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="875" column="16" selection-start-line="875" selection-start-column="16" selection-end-line="875" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Go/src/testing/testing.go" />
     <entry file="file://D:/Go/src/runtime/panic.go" />
-    <entry file="file://$PROJECT_DIR$/security/group.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security/security.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/security/group.json" />
     <entry file="file://D:/Go/src/time/time.go" />
     <entry file="file://$PROJECT_DIR$/session/session.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -391,40 +369,6 @@
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
             <element signature="e#17#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/session_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding>
-            <element signature="e#20#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security/security.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#20#104#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -443,13 +387,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools.go">
+    <entry file="file://$PROJECT_DIR$/swap_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="e#20#141#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="268">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json.go" />
+    <entry file="file://$PROJECT_DIR$/currency_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1017">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pkg/mod/github.com/alecthomas/gozmq@v0.0.0-20140622232202-d1b01a2df6b2/zmq_2_x.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zmq_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -463,20 +426,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swap_test.go">
+    <entry file="file://$PROJECT_DIR$/../../pkg/mod/github.com/spf13/viper@v1.6.1/viper.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="167">
+          <caret line="863" column="16" selection-start-line="863" selection-start-column="16" selection-end-line="863" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency_test.go">
+    <entry file="file://$PROJECT_DIR$/security/group.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+        <state relative-caret-position="192">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
-            <element signature="e#20#89#0" expanded="true" />
+            <element signature="e#20#87#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="171" column="17" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="17" />
+          <folding>
+            <element signature="e#20#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security/security.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="2059" selection-start-line="2059" selection-end-line="2059" />
+          <folding>
+            <element signature="e#21#8492#0" />
+            <element signature="e#8512#16876#0" />
+            <element signature="e#16899#25348#0" />
+            <element signature="e#25366#33827#0" />
+            <element signature="e#33846#42309#0" />
+            <element signature="e#42334#50792#0" />
+            <element signature="e#50816#59267#0" />
+            <element signature="e#59293#67744#0" />
+            <element signature="e#67773#76225#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#20#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security/security.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>

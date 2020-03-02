@@ -6,12 +6,112 @@ import (
 	"github.com/go-xorm/xorm"
 	"mt4SyncEt6/decimal"
 	"strconv"
+	"strings"
 	"time"
 )
+
+const TIME_LAYOUT = "2006-01-02 15:04:05"
 
 func GetEngine() *xorm.Engine {
 	enginEt6, _ := NewET6EngineXorm()
 	return enginEt6
+}
+
+/*func TimeConv(in int) (out string) {
+	if in/60 == 0 && in%60 == 0 {
+		out = strconv.Itoa(in/60) + ":" + "00" + ":" + "00"
+		return
+	}
+	out = strconv.Itoa(in/60) + ":" + strconv.Itoa(in%60) + ":" + "59"
+	return
+}*/
+func ConvToItemAddOneDay(in time.Time) (tf string, tt string, datef string) {
+	d, _ := time.ParseDuration("24h")
+	in = in.Add(d)
+	inStr := in.Format(TIME_LAYOUT)
+	fmt.Println("inStr==========", inStr)
+	dataSlice := strings.Split(string(inStr), " ")
+	datef = dataSlice[0]
+	tf = "00" + ":" + "00" + ":" + "00"
+	if in.Hour() == 0 && in.Minute() == 0 {
+		timeInSlice := strings.Split(string(dataSlice[1]), ":")
+		tt = timeInSlice[0] + ":" + timeInSlice[1] + ":" + "00"
+		return
+	}
+	timeOutSlice := strings.Split(string(dataSlice[1]), ":")
+	tt = timeOutSlice[0] + ":" + timeOutSlice[1] + ":" + "59"
+	return
+}
+func ConvertInsameSay(in time.Time) (out, timeDate string) {
+	inStr := in.Format(TIME_LAYOUT)
+	dataSlice := strings.Split(string(inStr), " ")
+	timeDate = dataSlice[0]
+	out = dataSlice[1]
+	return
+}
+func ConvFromItem(in time.Time) (ff string, ft string, datef string) {
+	inStr := in.Format(TIME_LAYOUT)
+	dataSlice := strings.Split(string(inStr), " ")
+	datef = dataSlice[0]
+	if in.Hour() == 0 && in.Minute() == 0 {
+		timeInSlice := strings.Split(string(dataSlice[1]), ":")
+		ff = timeInSlice[0] + ":" + timeInSlice[1] + ":" + "00"
+		ft = "00" + ":" + "00" + ":" + "00"
+		return
+	}
+	timeOutSlice := strings.Split(string(dataSlice[1]), ":")
+	ff = timeOutSlice[0] + ":" + timeOutSlice[1] + ":" + "59"
+	ft = "00" + ":" + "00" + ":" + "00"
+	return
+}
+
+func ConvToItem(in time.Time) (tf string, tt string, datef string) {
+	inStr := in.Format(TIME_LAYOUT)
+	dataSlice := strings.Split(string(inStr), " ")
+	datef = dataSlice[0]
+	tf = "00" + ":" + "00" + ":" + "00"
+	if in.Hour() == 0 && in.Minute() == 0 {
+		timeInSlice := strings.Split(string(dataSlice[1]), ":")
+		tt = timeInSlice[0] + ":" + timeInSlice[1] + ":" + "00"
+		return
+	}
+	timeOutSlice := strings.Split(string(dataSlice[1]), ":")
+	tt = timeOutSlice[0] + ":" + timeOutSlice[1] + ":" + "59"
+	return
+}
+func TimeConv(timeDate string, in int) (strTime string) {
+	var hour string
+	var minute string
+	if in/60 < 10 {
+		hour = "0" + strconv.Itoa(in/60)
+	} else {
+		hour = strconv.Itoa(in / 60)
+	}
+	if in%60 < 10 {
+		minute = "0" + strconv.Itoa(in%60)
+	} else {
+		minute = strconv.Itoa(in % 60)
+	}
+	strTime = timeDate + " " + hour + ":" + minute + ":" + "00"
+	fmt.Println("TimeConv====", strTime)
+	return
+}
+func IsSameDay(in1 time.Time, in2 time.Time) (flag TimeDay, isSame bool) {
+	if in1.Weekday() != in2.Weekday() {
+		return DayDIff, false
+	}
+	if in1.Weekday() == in2.Weekday() && in1.Minute() == in2.Minute() && in1.Hour() == in2.Hour() {
+		return DaySameTimeSame, false
+	}
+	return DaySameTimeDIff, true
+}
+func TimeConvToUTC(timeString string) time.Time {
+	loc, _ := time.LoadLocation("Europe/Moscow")
+	//loc, _ = time.LoadLocation("Local")
+	tMosc, _ := time.ParseInLocation(TIME_LAYOUT, timeString, loc)
+	tUTC := tMosc.UTC()
+	fmt.Println(tUTC.Format(TIME_LAYOUT))
+	return tUTC
 }
 
 func SessionToDB(v Et6Session) {
@@ -64,10 +164,11 @@ func SessionToDB(v Et6Session) {
 }
 
 func NewET6EngineXorm() (*xorm.Engine, error) {
+	/*dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
+	"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
+	"3306", "trading_system")*/
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
-		"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
-		"3306", "trading_system")
-
+		"root", "123456789", "localhost", "3306", "produce_trading_system")
 	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
 	if err != nil {
 		return nil, err
@@ -98,6 +199,7 @@ func NewProduceEngineXorm() (*xorm.Engine, error) {
 
 	return mt4Engine, nil
 }
+
 func NewLocalhostEngineXorm() (*xorm.Engine, error) {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
 		"root", "123456789", "localhost",
@@ -116,6 +218,32 @@ func NewLocalhostEngineXorm() (*xorm.Engine, error) {
 	return mt4Engine, nil
 }
 
+type Holiday struct {
+	ID          int             `json:"index" xorm:"-"`
+	Enable      bool            `json:"enable" xorm:"enable"`
+	Date        string          `json:"date" xorm:"date"`
+	From        string          `json:"from" xorm:"from"`
+	To          string          `json:"to" xorm:"to"`
+	Category    HolidayCategory `json:"-" xorm:"category"`
+	Symbol      string          `json:"symbol" xorm:"symbol"`
+	Description string          `json:"description" xorm:"description"`
+}
+type HolidayMt4 struct {
+	ID          int             `json:"index" xorm:"id"`
+	Enable      bool            `json:"enable" xorm:"enable"`
+	Date        string          `json:"date" xorm:"date"`
+	From        int             `json:"from" xorm:"from"`
+	To          int             `json:"to" xorm:"to"`
+	Category    HolidayCategory `json:"-" xorm:"category"`
+	Symbol      string          `json:"symbol" xorm:"symbol"`
+	Description string          `json:"description" xorm:"description"`
+}
+type Security struct {
+	ID           int      `json:"id" xorm:"id"`
+	SecurityName string   `json:"security_name" xorm:"security_name"`
+	Description  string   `json:"description" xorm:"description"`
+	Symbols      []string `json:"symbols" xorm:"-"`
+}
 type SwapInfo struct {
 	Symbol    string  `json:"symbol"`
 	SwapLong  float64 `json:"swap_long"`
@@ -261,4 +389,21 @@ const (
 	NotSupport SymbTradeRight = iota
 	OnlyClose
 	OpenClose
+)
+
+type HolidayCategory int
+
+const (
+	HolidayAll HolidayCategory = iota
+	HolidaySecurity
+	HolidaySymbol
+	HolidaySource
+)
+
+type TimeDay int
+
+const (
+	DayDIff TimeDay = iota
+	DaySameTimeSame
+	DaySameTimeDIff
 )
