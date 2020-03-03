@@ -68,8 +68,6 @@ func Test_modifyDB(t *testing.T) {
 			InsertSession(&extraSession)
 		}
 	}
-	//Modify timespan
-	//reset DB and write new sessions
 }
 
 func Test_TimeStringTest(t *testing.T) {
