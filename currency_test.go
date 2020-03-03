@@ -35,7 +35,7 @@ func TestCurrency(t *testing.T) {
 			v.Symbol = s
 		}
 		sql := "update source set currency = ? where source = ?"
-		_, err := engine.Exec(sql, v.Currency,  v.Symbol)
+		_, err := engine.Exec(sql, v.Currency, v.Symbol)
 		if err != nil {
 			fmt.Println(err)
 		}
