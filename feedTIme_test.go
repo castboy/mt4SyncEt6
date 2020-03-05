@@ -79,7 +79,10 @@ func Test_modifyDB(t *testing.T) {
 		//Remove and merge the repeated span
 		//Modify for modSessions
 		for _, modSession := range modSessions {
-			UpdateTimeSpanByID(&modSession)
+			err:=UpdateTimeSpanByID(&modSession)
+			if err!=nil{
+
+			}
 		}
 		//Insert for extraSessions
 		for _, extraSession := range extraSessions {

@@ -1,7 +1,6 @@
 package mt4SyncEt6
 
 import (
-	"fmt"
 	"github.com/go-xorm/xorm"
 	"strconv"
 	"strings"
@@ -51,22 +50,20 @@ func GetSessionBySource(sourceID int) (sessions []Session) {
 //timeSpan "22:00-24:00"
 func ModifyTheSession(sessions []Session) (newSessions, extraSession []Session) {
 	// Extra container
-	for k, v := range sessions {
-		normalSession, presessionInF := timeConv(v.TimeSpan)
+	for _, v := range sessions {
+		normalSession, preSessionInF := timeConv(v.TimeSpan)
 		//-1hour, and within same day
 		if normalSession != "" {
-			sessions[k].TimeSpan = normalSession
-		} else {
-			//删掉切片span=""的元素
-			sessions = append(sessions[:k], sessions[k+1:]...)
+			v.TimeSpan = normalSession
+			newSessions=append(newSessions,v)
 		}
 		//-1hour, and within same day
-		if presessionInF != "" {
+		if preSessionInF != "" {
 			sessionTemp := Session{
 				SourceID: v.SourceID,
 				Type:     v.Type,
 				Weekday:  (v.Weekday - 1),
-				TimeSpan: presessionInF,
+				TimeSpan: preSessionInF,
 			}
 			extraSession = append(extraSession, sessionTemp)
 		}
@@ -115,6 +112,7 @@ func timeConv(span string) (normalSpan string, sessionInPreDay string) {
 		normalSpan = ""
 		sessionInPreDay = normalStartTime + "-" + normalEndTime
 	}
+
 	return
 }
 
@@ -133,9 +131,7 @@ func UpdateTimeSpanByID(sess *Session) error {
 func DeRepeate(sessionMos, sessionIns []Session)(newSessionMos []Session,newSessionIns []Session){
 	//Copy data
 	newSessionMos=append(newSessionMos,sessionMos...)	//22:05-23:00 00:00-1:00
-	newSessionIns=append(newSessionIns,sessionIns...)	//23:00-24:00
-	kickMos:=make([]int,0)
-	kickIns:=make([]int,0)
+	mediaSessionIns:=append(newSessionIns,sessionIns...)	//23:00-24:00
 
 	for i,sessionIns:=range sessionIns{
 		timeIns := strings.Split(sessionIns.TimeSpan, "-")
@@ -152,18 +148,16 @@ func DeRepeate(sessionMos, sessionIns []Session)(newSessionMos []Session,newSess
 				sessionMod.TimeSpan=timeMod[0]+"-"+timeIns[1]
 				//kick the sessionIns from sessionsIns
 				newSessionMos[k]=sessionMod
-				kickIns=append(kickIns,i)
+				mediaSessionIns[i].TimeSpan=""
 			}
 		}
 	}
 	//Operation kick
-	fmt.Println("kickMos",kickMos)
-	fmt.Println("kickIns",kickIns)
-	for _,index:=range kickMos{
-		newSessionMos=append(newSessionMos[:index],newSessionMos[index+1:]...)
-	}
-	for _,index:=range kickIns{
-		newSessionIns=append(newSessionIns[:index],newSessionIns[index+1:]...)
+	for _,sessionIn:=range mediaSessionIns{
+		if sessionIn.TimeSpan==""{
+			continue
+		}
+		newSessionIns=append(newSessionIns,sessionIn)
 	}
 	return
 }
