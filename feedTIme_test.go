@@ -79,6 +79,10 @@ func Test_TimeStringTest(t *testing.T) {
 	} else {
 		t.Log("false")
 	}
+	newSessionMos:=[]int{1}
+	index:=0
+	newSessionMos=append(newSessionMos[:index],newSessionMos[index+1:]...)
+	t.Log(newSessionMos)
 }
 
 func Test_DeRepeate(t *testing.T){

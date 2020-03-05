@@ -132,8 +132,8 @@ func UpdateTimeSpanByID(sess *Session) error {
 
 func DeRepeate(sessionMos, sessionIns []Session)(newSessionMos []Session,newSessionIns []Session){
 	//Copy data
-	newSessionMos=append(newSessionMos,sessionMos...)
-	newSessionIns=append(newSessionIns,sessionIns...)
+	newSessionMos=append(newSessionMos,sessionMos...)	//22:05-23:00 00:00-1:00
+	newSessionIns=append(newSessionIns,sessionIns...)	//23:00-24:00
 	kickMos:=make([]int,0)
 	kickIns:=make([]int,0)
 
@@ -154,22 +154,16 @@ func DeRepeate(sessionMos, sessionIns []Session)(newSessionMos []Session,newSess
 				newSessionMos[k]=sessionMod
 				kickIns=append(kickIns,i)
 			}
-			//merge sessionMod to sessionIns
-			if timeMod[0]<timeIns[1]{
-				sessionIns.TimeSpan=timeIns[0]+"-"+timeMod[1]
-				newSessionIns[i]=sessionIns
-				kickMos=append(kickMos,k)
-			}
 		}
 	}
 	//Operation kick
 	fmt.Println("kickMos",kickMos)
 	fmt.Println("kickIns",kickIns)
 	for _,index:=range kickMos{
-		newSessionMos=append(newSessionMos[:index],newSessionMos[index:]...)
+		newSessionMos=append(newSessionMos[:index],newSessionMos[index+1:]...)
 	}
 	for _,index:=range kickIns{
-		newSessionMos=append(newSessionMos[:index],newSessionMos[index:]...)
+		newSessionIns=append(newSessionIns[:index],newSessionIns[index+1:]...)
 	}
 	return
 }
