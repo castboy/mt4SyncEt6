@@ -1,12 +1,13 @@
 package mt4SyncEt6
 
 import (
+	"fmt"
 	"github.com/go-xorm/xorm"
 	"strconv"
 	"strings"
 )
 
-var AM1 = "1:00"
+var AM1 = "01:00"
 
 func GetXROMProLocal() (engine *xorm.Engine) {
 	engine, _ = NewET6EngineXorm()
@@ -48,7 +49,6 @@ func GetSessionBySource(sourceID int) (sessions []Session) {
 //Modify the time by day-lighting time
 //Input [sourceID]sourceSessions
 //timeSpan "22:00-24:00"
-//map[int][]Session	key1:sourceID  key2:weekday session string
 func ModifyTheSession(sessions []Session) (newSessions, extraSession []Session) {
 	// Extra container
 	for k, v := range sessions {
@@ -105,9 +105,9 @@ func timeConv(span string) (normalSpan string, sessionInPreDay string) {
 		normalEndTime := normalEndHour + ":" + endMinBit
 		normalSpan = normalStartTime + "-" + normalEndTime
 		sessionInPreDay = normalStartHour + ":" + startMinBit + "-24:00"
-	} else if start < AM1 && end < AM1 {
-		backHourStart = backHourStart - 1 //Backward one hour
-		backHourEnd = backHourStart - 1   //Backward one hour
+	} else if start < AM1 && end <= AM1 {
+		backHourStart = backHourStart +23 //Backward one hour
+		backHourEnd = backHourStart +23   //Backward one hour
 		normalStartHour := strconv.Itoa(int(backHourStart))
 		normalEndHour := strconv.Itoa(int(backHourEnd))
 		normalStartTime := normalStartHour + ":" + startMinBit
@@ -128,4 +128,48 @@ func UpdateTimeSpanByID(sess *Session) error {
 	engine := GetEngine()
 	_, err := engine.Table(Session{}).Cols("time_span").Where("id=?", sess.ID).Update(sess)
 	return err
+}
+
+func DeRepeate(sessionMos, sessionIns []Session)(newSessionMos []Session,newSessionIns []Session){
+	//Copy data
+	newSessionMos=append(newSessionMos,sessionMos...)
+	newSessionIns=append(newSessionIns,sessionIns...)
+	kickMos:=make([]int,0)
+	kickIns:=make([]int,0)
+
+	for i,sessionIns:=range sessionIns{
+		timeIns := strings.Split(sessionIns.TimeSpan, "-")
+		for k,sessionMod:=range sessionMos{
+			// Conditions
+			if sessionIns.Weekday!=sessionMod.Weekday || sessionIns.Type != sessionMod.Type{
+				continue
+			}
+			//Operate
+			timeMod := strings.Split(sessionMod.TimeSpan, "-")
+			// merge sessionIns to sessionMod
+			if timeIns[0]<=timeMod[1]{
+				//Merge
+				sessionMod.TimeSpan=timeMod[0]+"-"+timeIns[1]
+				//kick the sessionIns from sessionsIns
+				newSessionMos[k]=sessionMod
+				kickIns=append(kickIns,i)
+			}
+			//merge sessionMod to sessionIns
+			if timeMod[0]<timeIns[1]{
+				sessionIns.TimeSpan=timeIns[0]+"-"+timeMod[1]
+				newSessionIns[i]=sessionIns
+				kickMos=append(kickMos,k)
+			}
+		}
+	}
+	//Operation kick
+	fmt.Println("kickMos",kickMos)
+	fmt.Println("kickIns",kickIns)
+	for _,index:=range kickMos{
+		newSessionMos=append(newSessionMos[:index],newSessionMos[index:]...)
+	}
+	for _,index:=range kickIns{
+		newSessionMos=append(newSessionMos[:index],newSessionMos[index:]...)
+	}
+	return
 }

@@ -2,6 +2,7 @@ package mt4SyncEt6
 
 import (
 	"testing"
+	"time"
 )
 
 func Test_GetSourceByCatagory(t *testing.T) {
@@ -48,7 +49,7 @@ func Test_modifyDB(t *testing.T) {
 	//Target://这周末的是所有的FX，所有Metal，所有Energy，所有Crypto，还有US30的，USA500的，NAS100的，JPN225的
 	sources = GetSourceByCatagory(SourceFx)
 	sources = append(sources, GetSourceByCatagory(SourceMetal)...)
-	sources = append(sources, GetSourceByCatagory(SourceCrypto)...)
+	sources = append(sources, GetSourceByCatagory(SourceEnergy)...)
 	sources = append(sources, GetSourceByCatagory(SourceCrypto)...)
 	sources = append(sources, *GetSourceBySourceName("US30"))
 	sources = append(sources, *GetSourceBySourceName("USA500"))
@@ -59,6 +60,8 @@ func Test_modifyDB(t *testing.T) {
 		//QuoteSession
 		sessions := GetSessionBySource(v.ID)
 		modSessions, extraSessions := ModifyTheSession(sessions)
+		//Remove and merge the repeated span
+		DeRepeate(modSessions,extraSessions)
 		//Modify for modSessions
 		for _, modSession := range modSessions {
 			UpdateTimeSpanByID(&modSession)
@@ -76,4 +79,16 @@ func Test_TimeStringTest(t *testing.T) {
 	} else {
 		t.Log("false")
 	}
+}
+
+func Test_DeRepeate(t *testing.T){
+	sessions:=[]Session{{241,48,0,time.Sunday,"23:05-24:00"},
+						{241,48,0,time.Monday,"00:00-02:00"}}
+	quote, extraQuote := ModifyTheSession(sessions[:2])
+	quoteNew, extraQuoteNew :=DeRepeate(quote,extraQuote)
+	t.Log("quote",quote)
+	t.Log("extraQuote",extraQuote)
+
+	t.Log("quoteNew",quoteNew)
+	t.Log("extraQuoteNew",extraQuoteNew)
 }
