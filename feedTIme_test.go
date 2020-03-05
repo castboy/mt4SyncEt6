@@ -78,15 +78,20 @@ func Test_modifyDB(t *testing.T) {
 		modSessions, extraSessions := DeRepeate(modSessionsOld,extraSessionsOld)
 		//Remove and merge the repeated span
 		//Modify for modSessions
+		t.Log(modSessions)
+		t.Log(extraSessions)
 		for _, modSession := range modSessions {
 			err:=UpdateTimeSpanByID(&modSession)
 			if err!=nil{
-
+				t.Fatalf("err:%+v",err)
 			}
 		}
 		//Insert for extraSessions
 		for _, extraSession := range extraSessions {
-			InsertSession(&extraSession)
+			err:=InsertSession(&extraSession)
+			if err!=nil{
+				t.Fatalf("err:%+v",err)
+			}
 		}
 	}
 }

@@ -51,24 +51,24 @@ func GetSessionBySource(sourceID int) (sessions []Session) {
 func ModifyTheSession(sessions []Session) (newSessions, extraSession []Session) {
 	// Extra container
 	for _, v := range sessions {
-		normalSession, preSessionInF := timeConv(v.TimeSpan)
+		normalSpan, preSpanInF := timeConv(v.TimeSpan)
 		//-1hour, and within same day
-		if normalSession != "" {
-			v.TimeSpan = normalSession
+		if normalSpan != "" {
+			v.TimeSpan = normalSpan
 			newSessions=append(newSessions,v)
 		}
 		//-1hour, and within same day
-		if preSessionInF != "" {
+		if preSpanInF != "" {
 			sessionTemp := Session{
 				SourceID: v.SourceID,
 				Type:     v.Type,
 				Weekday:  (v.Weekday - 1),
-				TimeSpan: preSessionInF,
+				TimeSpan: preSpanInF,
 			}
 			extraSession = append(extraSession, sessionTemp)
 		}
 	}
-	return sessions, extraSession
+	return
 }
 
 func timeConv(span string) (normalSpan string, sessionInPreDay string) {
