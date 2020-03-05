@@ -87,7 +87,7 @@ func timeConv(span string) (normalSpan string, sessionInPreDay string) {
 	if err != nil {
 		return
 	}
-	if start >= AM1 { //2:35-4:25
+	if start > AM1 { //2:35-4:25
 		backHourStart = backHourStart - 1 //Backward one hour
 		backHourEnd = backHourEnd - 1     //Backward one hour
 		normalStartHour := strconv.Itoa(int(backHourStart))
@@ -105,9 +105,9 @@ func timeConv(span string) (normalSpan string, sessionInPreDay string) {
 		normalEndTime := normalEndHour + ":" + endMinBit
 		normalSpan = normalStartTime + "-" + normalEndTime
 		sessionInPreDay = normalStartHour + ":" + startMinBit + "-24:00"
-	} else if start < AM1 && end <= AM1 {
+	} else if start <= AM1 && end <= AM1 {
 		backHourStart = backHourStart +23 //Backward one hour
-		backHourEnd = backHourStart +23   //Backward one hour
+		backHourEnd = backHourEnd +23   //Backward one hour
 		normalStartHour := strconv.Itoa(int(backHourStart))
 		normalEndHour := strconv.Itoa(int(backHourEnd))
 		normalStartTime := normalStartHour + ":" + startMinBit

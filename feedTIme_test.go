@@ -42,6 +42,21 @@ func Test_GetSourceBySourceName(t *testing.T) {
 	t.Log("sourceNAS100", sourceNAS100)
 	t.Log("sourceJPN225", sourceJPN225)
 }
+
+func Test_DeRepeate(t *testing.T){
+	/*sessions1:=[]Session{{241,48,0,time.Sunday,"23:05-24:00"},
+	{241,48,0,time.Monday,"00:00-02:00"}}*/
+	sessions:=[]Session{{241,48,0,time.Sunday,"23:05-24:00"},
+		{241,48,0,time.Monday,"00:30-10:40"}}
+	quote, extraQuote := ModifyTheSession(sessions[:2])
+	quoteNew, extraQuoteNew :=DeRepeate(quote,extraQuote)
+	t.Log("quote",quote)
+	t.Log("extraQuote",extraQuote)
+
+	t.Log("quoteNew",quoteNew)
+	t.Log("extraQuoteNew",extraQuoteNew)
+}
+
 func Test_modifyDB(t *testing.T) {
 	//preapare
 	sources := make([]Source, 0)
@@ -59,9 +74,9 @@ func Test_modifyDB(t *testing.T) {
 	for _, v := range sources {
 		//QuoteSession
 		sessions := GetSessionBySource(v.ID)
-		modSessions, extraSessions := ModifyTheSession(sessions)
+		modSessionsOld, extraSessionsOld := ModifyTheSession(sessions)
+		modSessions, extraSessions := DeRepeate(modSessionsOld,extraSessionsOld)
 		//Remove and merge the repeated span
-		DeRepeate(modSessions,extraSessions)
 		//Modify for modSessions
 		for _, modSession := range modSessions {
 			UpdateTimeSpanByID(&modSession)
@@ -73,26 +88,3 @@ func Test_modifyDB(t *testing.T) {
 	}
 }
 
-func Test_TimeStringTest(t *testing.T) {
-	if "12:45" > "13:00" {
-		t.Log("true")
-	} else {
-		t.Log("false")
-	}
-	newSessionMos:=[]int{1}
-	index:=0
-	newSessionMos=append(newSessionMos[:index],newSessionMos[index+1:]...)
-	t.Log(newSessionMos)
-}
-
-func Test_DeRepeate(t *testing.T){
-	sessions:=[]Session{{241,48,0,time.Sunday,"23:05-24:00"},
-						{241,48,0,time.Monday,"00:00-02:00"}}
-	quote, extraQuote := ModifyTheSession(sessions[:2])
-	quoteNew, extraQuoteNew :=DeRepeate(quote,extraQuote)
-	t.Log("quote",quote)
-	t.Log("extraQuote",extraQuote)
-
-	t.Log("quoteNew",quoteNew)
-	t.Log("extraQuoteNew",extraQuoteNew)
-}
