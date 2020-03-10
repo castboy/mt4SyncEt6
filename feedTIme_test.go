@@ -26,10 +26,13 @@ func Test_GetSessionBySource(t *testing.T) {
 func Test_ModifyTheSession(t *testing.T) {
 	sessionsQuote := GetSessionBySource(1)
 	//sessionsTrade:=GetSessionBySource(1,1,1)
-	newQuote, extraQuote := ModifyTheSession(sessionsQuote)
+	quote, extraQuote, err := modifyTheSession(sessionsQuote[:2], 1, EarlierThanCurrent)
+	if err != nil {
+		t.Fatal("modifyTheSession err:", err)
+	}
 	//newTrade,extraTrade:=ModifyTheSession(sessionsTrade)
 	t.Log("sessionsQuote", sessionsQuote)
-	t.Log("newQuote", newQuote)
+	t.Log("newQuote", quote)
 	t.Log("extraQuote", extraQuote)
 }
 func Test_GetSourceBySourceName(t *testing.T) {
@@ -43,18 +46,21 @@ func Test_GetSourceBySourceName(t *testing.T) {
 	t.Log("sourceJPN225", sourceJPN225)
 }
 
-func Test_DeRepeate(t *testing.T){
+func Test_DeRepeate(t *testing.T) {
 	/*sessions1:=[]Session{{241,48,0,time.Sunday,"23:05-24:00"},
 	{241,48,0,time.Monday,"00:00-02:00"}}*/
-	sessions:=[]Session{{241,48,0,time.Sunday,"23:05-24:00"},
-		{241,48,0,time.Monday,"00:30-10:40"}}
-	quote, extraQuote := ModifyTheSession(sessions[:2])
-	quoteNew, extraQuoteNew :=DeRepeate(quote,extraQuote)
-	t.Log("quote",quote)
-	t.Log("extraQuote",extraQuote)
+	sessions := []Session{{241, 48, 0, time.Sunday, "23:05-24:00"},
+		{241, 48, 0, time.Monday, "00:30-10:40"}}
+	quote, extraQuote, err := modifyTheSession(sessions[:2], 1, EarlierThanCurrent)
+	if err != nil {
+		t.Fatal("modifyTheSession err:", err)
+	}
+	quoteNew, extraQuoteNew := DeRepeate(quote, extraQuote)
+	t.Log("quote", quote)
+	t.Log("extraQuote", extraQuote)
 
-	t.Log("quoteNew",quoteNew)
-	t.Log("extraQuoteNew",extraQuoteNew)
+	t.Log("quoteNew", quoteNew)
+	t.Log("extraQuoteNew", extraQuoteNew)
 }
 
 func Test_modifyDB(t *testing.T) {
@@ -74,25 +80,98 @@ func Test_modifyDB(t *testing.T) {
 	for _, v := range sources {
 		//QuoteSession
 		sessions := GetSessionBySource(v.ID)
-		modSessionsOld, extraSessionsOld := ModifyTheSession(sessions)
-		modSessions, extraSessions := DeRepeate(modSessionsOld,extraSessionsOld)
+		modSessionsOld, extraSessionsOld, err := modifyTheSession(sessions, 1, EarlierThanCurrent)
+		if err != nil {
+			t.Fatal("modifyTheSession err:", err)
+		}
+		modSessions, extraSessions := DeRepeate(modSessionsOld, extraSessionsOld)
 		//Remove and merge the repeated span
 		//Modify for modSessions
 		t.Log(modSessions)
 		t.Log(extraSessions)
 		for _, modSession := range modSessions {
-			err:=UpdateTimeSpanByID(&modSession)
-			if err!=nil{
-				t.Fatalf("err:%+v",err)
+			err := UpdateTimeSpanByID(&modSession)
+			if err != nil {
+				t.Fatalf("err:%+v", err)
 			}
 		}
 		//Insert for extraSessions
 		for _, extraSession := range extraSessions {
-			err:=InsertSession(&extraSession)
-			if err!=nil{
-				t.Fatalf("err:%+v",err)
+			err := InsertSession(&extraSession)
+			if err != nil {
+				t.Fatalf("err:%+v", err)
 			}
 		}
 	}
 }
 
+func Test_earlyModifyTheSession(t *testing.T) {
+	sessions := []Session{
+		{241, 1, 0, time.Sunday, "22:05-24:00"},
+		{241, 1, 0, time.Monday, "02:00-21:55"},
+		{241, 1, 0, time.Monday, "22:05-24:00"},
+		{241, 1, 0, time.Tuesday, "00:00-21:55"},
+		{241, 1, 0, time.Tuesday, "22:05-24:00"},
+		{241, 1, 0, time.Wednesday, "00:00-21:55"},
+		{241, 1, 0, time.Wednesday, "22:05-24:00"},
+		{241, 1, 0, time.Thursday, "00:00-21:55"},
+		{241, 1, 0, time.Thursday, "22:05-24:00"},
+		{241, 1, 0, time.Friday, "00:00-21:55"},
+		{241, 1, 1, time.Sunday, "22:05-24:00"},
+		{241, 1, 1, time.Monday, "02:00-21:55"},
+		{241, 1, 1, time.Monday, "22:05-24:00"},
+		{241, 1, 1, time.Tuesday, "00:00-21:55"},
+		{241, 1, 1, time.Tuesday, "22:05-24:00"},
+		{241, 1, 1, time.Wednesday, "00:00-21:55"},
+		{241, 1, 1, time.Wednesday, "22:05-24:00"},
+		{241, 1, 1, time.Thursday, "00:00-21:55"},
+		{241, 1, 1, time.Thursday, "22:05-24:00"},
+		{241, 1, 1, time.Friday, "00:00-21:55"},
+	}
+	mos, exts, err := modifyTheSession(sessions, 1, EarlierThanCurrent)
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(mos)
+	t.Log(exts)
+}
+
+func Test_laterModifyTheSession(t *testing.T) {
+	sessions := []Session{
+		{241, 1, 0, time.Sunday, "22:05-24:00"},
+		{241, 1, 0, time.Monday, "01:00-21:55"},
+		{241, 1, 0, time.Monday, "22:05-24:00"},
+		{241, 1, 0, time.Tuesday, "00:00-21:55"},
+		{241, 1, 0, time.Tuesday, "22:05-24:00"},
+		{241, 1, 0, time.Wednesday, "00:00-21:55"},
+		{241, 1, 0, time.Wednesday, "22:05-24:00"},
+		{241, 1, 0, time.Thursday, "00:00-21:55"},
+		{241, 1, 0, time.Thursday, "22:05-24:00"},
+		{241, 1, 0, time.Friday, "00:00-21:55"},
+		{241, 1, 1, time.Sunday, "22:05-24:00"},
+		{241, 1, 1, time.Monday, "01:00-21:55"},
+		{241, 1, 1, time.Monday, "22:05-24:00"},
+		{241, 1, 1, time.Tuesday, "00:00-21:55"},
+		{241, 1, 1, time.Tuesday, "22:05-24:00"},
+		{241, 1, 1, time.Wednesday, "00:00-21:55"},
+		{241, 1, 1, time.Wednesday, "22:05-24:00"},
+		{241, 1, 1, time.Thursday, "00:00-21:55"},
+		{241, 1, 1, time.Thursday, "22:05-24:00"},
+		{241, 1, 1, time.Friday, "00:00-21:55"},
+	}
+
+	mos, exts, err := modifyTheSession(sessions, 1, LaterThanCurrent)
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(mos)
+	t.Log(exts)
+}
+
+func Test_timeTest(t *testing.T) {
+	if "22:05" < "23:00" {
+		t.Log(true)
+	} else {
+		t.Log(false)
+	}
+}

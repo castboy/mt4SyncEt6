@@ -168,7 +168,7 @@ func NewET6EngineXorm() (*xorm.Engine, error) {
 	"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
 	"3306", "trading_system")*/
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
-		"root", "123456789", "localhost", "3306", "produce_trading_system")
+		"root", "123456789", "localhost", "3306", "trading_system")
 	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
 	if err != nil {
 		return nil, err
