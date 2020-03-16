@@ -295,14 +295,6 @@ type Session struct {
 	TimeSpan string       `xorm:"time_span"`
 }
 
-type AccountGroup struct {
-	ID              int             `xorm:"id autoincr"`
-	Name            string          `xorm:"name"`
-	DepositCurrency string          `xorm:"deposit_currency"`
-	MarginStopOut   decimal.Decimal `xorm:"margin_stop_out"`
-	MarginMode      MarginCalcMode  `xorm:"margin_mode"`
-}
-
 type ConGroupSec struct {
 	ID             int             `xorm:"id autoincr"`
 	GroupId        int             `xorm:"group_id"`
@@ -406,4 +398,25 @@ const (
 	DayDIff TimeDay = iota
 	DaySameTimeSame
 	DaySameTimeDIff
+)
+
+// Group
+type AccountGroup struct {
+	ID              int             `xorm:"id autoincr"`
+	Name            string          `xorm:"notnull"`
+	DepositCurrency string          `xorm:"notnull"`
+	MarginStopOut   decimal.Decimal `xorm:"notnull"`
+	MarginMode      MarginCalcMode
+	MarginCall      decimal.Decimal `xorm:"margin_call"`
+	TradeType       GroupTradeType
+	IsChargeSwap    bool   `xorm:"is_charge_swap"`
+	Comment         string `xorm:"comment"`
+}
+
+type GroupTradeType int32
+
+const (
+	TestBook GroupTradeType = iota
+	ABook
+	BBook
 )
