@@ -63,43 +63,79 @@ func UpdateTimeSpanByID(sess *Session) error {
 	return err
 }
 
-func DeRepeate(sessionMos, sessionIns []Session) (newSessionMos []Session, newSessionIns []Session) {
-	//Copy data
-	newSessionMos = append(newSessionMos, sessionMos...)    //22:05-23:00 00:00-1:00
-	mediaSessionIns := append(newSessionIns, sessionIns...) //23:00-24:00
+func DeleteSession(sess *Session) error {
+	engine := GetEngine()
+	_, err := engine.Where("id=？", sess.ID).Delete(sess)
+	return err
+}
 
-	for i, sessionIns := range sessionIns {
-		timeIns := strings.Split(sessionIns.TimeSpan, "-")
-		for k, sessionMod := range sessionMos {
-			// Conditions
-			if sessionIns.Weekday != sessionMod.Weekday || sessionIns.Type != sessionMod.Type {
-				continue
-			}
-			//Operate
-			timeMod := strings.Split(sessionMod.TimeSpan, "-")
-			// merge sessionIns to sessionMod
-			if timeIns[0] <= timeMod[1] {
-				//Merge
-				sessionMod.TimeSpan = timeMod[0] + "-" + timeIns[1]
-				//kick the sessionIns from sessionsIns
-				newSessionMos[k] = sessionMod
-				mediaSessionIns[i].TimeSpan = ""
-			}
-		}
+func timeUpdate(sessions []Session, hour int, feedType FeedTimeType) (err error) {
+	modSessions, insSessions, delSeessions, err := modifyTheSession(sessions, hour, feedType)
+	if err != nil {
+		return err
 	}
-	//Operation kick
-	for _, sessionIn := range mediaSessionIns {
-		if sessionIn.TimeSpan == "" {
+	//insert
+	for _, insSession := range insSessions {
+		timeNods := strings.Split(insSession.TimeSpan, "-")
+		if len(timeNods) != TimeNodesLength || timeNods[0] == timeNods[1] {
 			continue
 		}
-		newSessionIns = append(newSessionIns, sessionIn)
+		err = InsertSession(&insSession)
+		if err != nil {
+			return err
+		}
+	}
+	//Update
+	for _, modSession := range modSessions {
+		timeNods := strings.Split(modSession.TimeSpan, "-")
+		if len(timeNods) != TimeNodesLength || timeNods[0] == timeNods[1] {
+			continue
+		}
+		err = UpdateTimeSpanByID(&modSession)
+		if err != nil {
+			return err
+		}
+	}
+	//Del session
+	for _, delsession := range delSeessions {
+		timeNods := strings.Split(delsession.TimeSpan, "-")
+		if len(timeNods) != TimeNodesLength || timeNods[0] == timeNods[1] {
+			continue
+		}
+		err = DeleteSession(&delsession)
+		if err != nil {
+			return err
+		}
+	}
+
+	return
+}
+
+func sessionConv(source *Source, sessionsMap map[time.Weekday]map[int]string, sessionType SessionType) (sessions []Session) {
+	//sessionMap check
+	if sessionsMap == nil || len(sessionsMap) == 0 {
+		return nil
+	}
+	for weekDay, v := range sessionsMap {
+		for id, ss := range v {
+			session := Session{
+				id,
+				source.ID,
+				sessionType,
+				weekDay,
+				ss,
+			}
+			sessions = append(sessions, session)
+		}
 	}
 	return
 }
 
 //Modify the time by day-lighting time
-func modifyTheSession(sessions []Session, hour int, feedType FeedTimeType) (modSessions, extraSession []Session, err error) {
+func modifyTheSession(sessions []Session, hour int, feedType FeedTimeType) (modSessions, extraSession, delSession []Session, err error) {
 	// Extra container
+	modSessionsTemp := []Session{}
+	extraSessionsTemp := []Session{}
 	for _, v := range sessions {
 		var normalSpan, preSpanInF string
 		var weekday time.Weekday
@@ -112,12 +148,12 @@ func modifyTheSession(sessions []Session, hour int, feedType FeedTimeType) (modS
 			normalSpan, preSpanInF, err = laterTimeConv(v.TimeSpan, hour)
 		}
 		if err != nil {
-			return nil, nil, err
+			return nil, nil, nil, err
 		}
-		//normalSpan!=nil include -1 hour within same day or exceed one day
+		//normalSpan!=nil include -1 hour within same day or exceed one day 00:30-01:00====23:30-24:00
 		if normalSpan != "" {
 			v.TimeSpan = normalSpan
-			modSessions = append(modSessions, v)
+			modSessionsTemp = append(modSessionsTemp, v)
 			//-1hour, and within previous day
 			if preSpanInF != "" {
 				sessionTemp := Session{
@@ -126,7 +162,7 @@ func modifyTheSession(sessions []Session, hour int, feedType FeedTimeType) (modS
 					Weekday:  weekday,
 					TimeSpan: preSpanInF,
 				}
-				extraSession = append(extraSession, sessionTemp)
+				extraSessionsTemp = append(extraSessionsTemp, sessionTemp)
 			}
 		}
 		//If origin span is "xx:xx-hour:00", need update but not insert
@@ -138,31 +174,38 @@ func modifyTheSession(sessions []Session, hour int, feedType FeedTimeType) (modS
 				TimeSpan: preSpanInF,
 			}
 			sessionTemp.ID = v.ID
-			modSessions = append(modSessions, v)
+			modSessionsTemp = append(modSessionsTemp, sessionTemp)
 		}
 	}
 	//remove the crossing time_span, for examplp "22:00-23:30" and "23:00-24:00",which can be combined to "22:00-24:00
-	modSessions, extraSession = deRepeate(modSessions, extraSession, feedType)
+
+	modSessionsRe, extraSessionRe := deRepeate(modSessionsTemp, extraSessionsTemp, feedType)
+	extraSession = append(extraSession, extraSessionRe...)
+	modSessionsR, delSessionR, err := modDeRepead(modSessionsRe)
+
+	modSessions = append(modSessions, modSessionsR...)
+	delSession = append(delSession, delSessionR...)
+
 	return
 }
 
 //Remove and merge the crossing time_span
 func deRepeate(sessionMos, sessionIns []Session, feedType FeedTimeType) (newSessionMos []Session, newSessionIns []Session) {
 	//Copy data
-	newSessionMos = append(newSessionMos, sessionMos...)    //22:05-23:00 00:00-1:00
-	mediaSessionIns := append(newSessionIns, sessionIns...) //23:00-24:00
+	newSessionMos = append([]Session{}, sessionMos...)    //22:05-23:00 00:00-1:00
+	mediaSessionIns := append([]Session{}, sessionIns...) //23:00-24:00
 	//Prepare
 	for i, sessionIns := range sessionIns {
 		timeIns := strings.Split(sessionIns.TimeSpan, "-")
 		for k, sessionMod := range sessionMos {
 			// Conditions
-			if sessionIns.Weekday != sessionMod.Weekday || sessionIns.Type != sessionMod.Type {
+			if sessionIns.Weekday != sessionMod.Weekday || sessionIns.Type != sessionMod.Type || sessionIns.SourceID != sessionMod.SourceID {
 				continue
 			}
 			//Operate
 			timeMod := strings.Split(sessionMod.TimeSpan, "-")
 			// merge sessionIns to sessionMod
-			if feedType == EarlierThanCurrent {
+			if feedType == EarlierThanCurrent { //
 				if timeIns[0] <= timeMod[1] {
 					//Merge
 					sessionMod.TimeSpan = timeMod[0] + "-" + timeIns[1]
@@ -171,7 +214,7 @@ func deRepeate(sessionMos, sessionIns []Session, feedType FeedTimeType) (newSess
 					mediaSessionIns[i].TimeSpan = ""
 				}
 			}
-			if feedType == LaterThanCurrent {
+			if feedType == LaterThanCurrent { //22:00-24:00 00:00-2:00
 				if timeIns[1] >= timeMod[0] {
 					//Merge
 					sessionMod.TimeSpan = timeIns[0] + "-" + timeMod[1]
@@ -183,12 +226,13 @@ func deRepeate(sessionMos, sessionIns []Session, feedType FeedTimeType) (newSess
 
 		}
 	}
-	//Operation kick
-	for _, sessionIn := range mediaSessionIns {
-		if sessionIn.TimeSpan == "" {
+	//sessionMos
+
+	for i := range mediaSessionIns {
+		if mediaSessionIns[i].TimeSpan == "" {
 			continue
 		}
-		newSessionIns = append(newSessionIns, sessionIn)
+		newSessionIns = append(newSessionIns, mediaSessionIns[i])
 	}
 	return
 }
@@ -204,9 +248,9 @@ func earlyTimeConv(span string, hour int) (normalSpan string, sessionInPreDay st
 	}
 	//Prepare
 	var AM1 string
-	AM1 = strconv.Itoa(24-hour) + ":00"
+	AM1 = strconv.Itoa(hour) + ":00"
 	if hour < 10 {
-		AM1 = "0" + strconv.Itoa(24-hour) + ":00"
+		AM1 = "0" + strconv.Itoa(hour) + ":00"
 	}
 
 	timeSlices := strings.Split(span, "-") //2:35-4:25
@@ -244,14 +288,14 @@ func earlyTimeConv(span string, hour int) (normalSpan string, sessionInPreDay st
 		normalSpan = normalStartTime + "-" + normalEndTime
 		sessionInPreDay = normalStartHour + ":" + startMinBit + "-24:00"
 	} else if end <= AM1 { //00:35-01:00
-		hourStart = hourStart + Daylength - 1 //Backward one hour
-		hourEnd = hourEnd + Daylength - 1     //Backward one hour
-		normalStartHour := timeFormatToStr(int(hourStart))
-		normalEndHour := timeFormatToStr(int(hourEnd))
-		normalStartTime := normalStartHour + ":" + startMinBit
-		normalEndTime := normalEndHour + ":" + endMinBit
+		hourStart = hourStart + Daylength - 1                  //Backward one hour   23
+		hourEnd = hourEnd + Daylength - 1                      //Backward one hour   23
+		normalStartHour := timeFormatToStr(int(hourStart))     //23
+		normalEndHour := timeFormatToStr(int(hourEnd))         //23
+		normalStartTime := normalStartHour + ":" + startMinBit //23:35
+		normalEndTime := normalEndHour + ":" + endMinBit       //24:00
 		normalSpan = ""
-		sessionInPreDay = normalStartTime + "-" + normalEndTime
+		sessionInPreDay = normalStartTime + "-" + normalEndTime //23:35-24:00
 	}
 	return
 }
@@ -316,6 +360,62 @@ func laterTimeConv(span string, hour int) (normalSpan string, sessionInNextDay s
 	return
 }
 
+func modDeRepead(sessions []Session) (modSS, delSS []Session, err error) {
+	//Return sss
+	sss := append([]Session{}, sessions...)
+	sssCopy := append([]Session{}, sessions...)
+	for i := range sss {
+		nodsSss := strings.Split(sss[i].TimeSpan, "-")
+		if len(nodsSss) != TimeNodesLength || nodsSss[0] == nodsSss[1] {
+			return nil, nil, errors.Errorf("Nil or invalid time span!:%+v", nodsSss)
+		}
+		for j := range sessions {
+			//Symbol diff and should same
+			if sss[i].SourceID != sessions[j].SourceID {
+				continue
+			}
+			//ID different should be diff
+			if sss[i].ID == sessions[j].ID {
+				continue
+			}
+			//weekday should be same
+			if sss[i].Weekday != sessions[j].Weekday {
+				continue
+			}
+			nodsSessions := strings.Split(sss[j].TimeSpan, "-")
+			if len(nodsSessions) != TimeNodesLength || nodsSessions[0] == nodsSessions[1] {
+				return nil, nil, errors.Errorf("Nil or invalid time span!:%+v", nodsSss)
+			}
+			//Merge backward
+			// case1: self check 23:00-24:00 && 00:00-3:00======> 00:00-1:00 && 01:00-4:00  later
+			// case1: self check 23:00-24:00 && 00:00-2:00======> 22:00-23:00  23:00-24:00 && 00:00-1:00 early
+			if nodsSss[1] == nodsSessions[0] {
+				span := nodsSss[0] + "-" + nodsSessions[1]
+				//keep smaller SessionID
+				if sss[i].ID < sessions[j].ID {
+					sssCopy[i].TimeSpan = span
+					//delete j
+					sssCopy[j].TimeSpan = ""
+				} else {
+					sssCopy[j].TimeSpan = span
+					//delete j
+					sssCopy[i].TimeSpan = ""
+				}
+			}
+		}
+	}
+	//Arrangement
+
+	for i := range sssCopy {
+		if sssCopy[i].TimeSpan == "" {
+			delSS = append(delSS, sss[i])
+		} else {
+			modSS = append(modSS, sssCopy[i])
+		}
+	}
+	return
+}
+
 //Time format
 func timeFormatToStr(hour int) (time string) {
 	time = strconv.Itoa(hour)
@@ -325,6 +425,7 @@ func timeFormatToStr(hour int) (time string) {
 	return time
 }
 
+type feedTimeOperator struct{}
 type FeedTimeType int
 
 const (
@@ -333,8 +434,9 @@ const (
 )
 
 const (
-	WeekLength = 7
-	Daylength  = 24
+	WeekLength      = 7
+	Daylength       = 24
+	TimeNodesLength = 2
 )
 
 type ChangeDay int

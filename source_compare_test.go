@@ -233,7 +233,7 @@ func Test_SessionCompare(t *testing.T) {
 		timeSpans := make([]string, 0)
 		//Search time span from pro
 		for _, proOne := range pro {
-			if devOne.SourceID == proOne.SourceID && devOne.Type == proOne.Type && devOne.Weekday == proOne.Weekday {
+			if devOne.SourceID == proOne.SourceID && devOne.Type == proOne.Type  {
 				timeSpans = append(timeSpans, proOne.TimeSpan)
 			}
 		}

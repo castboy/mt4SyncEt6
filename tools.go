@@ -181,7 +181,24 @@ func NewET6EngineXorm() (*xorm.Engine, error) {
 
 	return mt4Engine, nil
 }
+func NewKiteEngineXorm() (*xorm.Engine, error) {
+	/*dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
+	"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
+	"3306", "trading_system")*/
+	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
+		"root", "wang1234", "172.1.1.85", "3306", "trading_system")
+	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
+	if err != nil {
+		return nil, err
+	}
+	mt4Engine.SetMaxOpenConns(100)
+	mt4Engine.SetMaxIdleConns(20)
+	mt4Engine.SetConnMaxLifetime(1800 * time.Second)
+	//engine.DatabaseTZ = time.UTC
+	//engine.TZLocation = time.UTC
 
+	return mt4Engine, nil
+}
 func NewProduceEngineXorm() (*xorm.Engine, error) {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
 		"et6_ro", "OhQu9Unei7iezair4Oe0", "rm-f2z35ztaojigwx291ro.mysql.eu-west-1.rds.aliyuncs.com",
@@ -292,6 +309,14 @@ type Session struct {
 	SourceID int          `xorm:"source_id"`
 	Type     SessionType  `xorm:"type"`
 	Weekday  time.Weekday `xorm:"weekday"`
+	TimeSpan string       `xorm:"time_span"`
+}
+
+type SessionNew struct {
+	ID       int          `xorm:"id autoincr"`
+	SourceID int          `xorm:"source_id"`
+	Type     SessionType  `xorm:"type"`
+	DstType     DSTType  `xorm:"dst_type"`
 	TimeSpan string       `xorm:"time_span"`
 }
 
@@ -419,4 +444,11 @@ const (
 	TestBook GroupTradeType = iota
 	ABook
 	BBook
+)
+
+type DSTType int
+const(
+	DST DSTType=iota
+	NonDST
+	None
 )

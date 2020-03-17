@@ -26,7 +26,7 @@ func Test_GetSessionBySource(t *testing.T) {
 func Test_ModifyTheSession(t *testing.T) {
 	sessionsQuote := GetSessionBySource(1)
 	//sessionsTrade:=GetSessionBySource(1,1,1)
-	quote, extraQuote, err := modifyTheSession(sessionsQuote[:2], 1, EarlierThanCurrent)
+	quote, extraQuote, _,err := modifyTheSession(sessionsQuote[:2], 1, EarlierThanCurrent)
 	if err != nil {
 		t.Fatal("modifyTheSession err:", err)
 	}
@@ -51,11 +51,11 @@ func Test_DeRepeate(t *testing.T) {
 	{241,48,0,time.Monday,"00:00-02:00"}}*/
 	sessions := []Session{{241, 48, 0, time.Sunday, "23:05-24:00"},
 		{241, 48, 0, time.Monday, "00:30-10:40"}}
-	quote, extraQuote, err := modifyTheSession(sessions[:2], 1, EarlierThanCurrent)
+	quote, extraQuote,_, err := modifyTheSession(sessions[:2], 1, EarlierThanCurrent)
 	if err != nil {
 		t.Fatal("modifyTheSession err:", err)
 	}
-	quoteNew, extraQuoteNew := DeRepeate(quote, extraQuote)
+	quoteNew, extraQuoteNew := deRepeate(quote, extraQuote,EarlierThanCurrent)
 	t.Log("quote", quote)
 	t.Log("extraQuote", extraQuote)
 
@@ -80,11 +80,11 @@ func Test_modifyDB(t *testing.T) {
 	for _, v := range sources {
 		//QuoteSession
 		sessions := GetSessionBySource(v.ID)
-		modSessionsOld, extraSessionsOld, err := modifyTheSession(sessions, 1, EarlierThanCurrent)
+		modSessionsOld, extraSessionsOld,_, err := modifyTheSession(sessions, 1, EarlierThanCurrent)
 		if err != nil {
 			t.Fatal("modifyTheSession err:", err)
 		}
-		modSessions, extraSessions := DeRepeate(modSessionsOld, extraSessionsOld)
+		modSessions, extraSessions := deRepeate(modSessionsOld, extraSessionsOld,EarlierThanCurrent)
 		//Remove and merge the repeated span
 		//Modify for modSessions
 		t.Log(modSessions)
@@ -128,7 +128,7 @@ func Test_earlyModifyTheSession(t *testing.T) {
 		{241, 1, 1, time.Thursday, "22:05-24:00"},
 		{241, 1, 1, time.Friday, "00:00-21:55"},
 	}
-	mos, exts, err := modifyTheSession(sessions, 1, EarlierThanCurrent)
+	mos, exts, _,err := modifyTheSession(sessions, 1, EarlierThanCurrent)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -160,7 +160,7 @@ func Test_laterModifyTheSession(t *testing.T) {
 		{241, 1, 1, time.Friday, "00:00-21:55"},
 	}
 
-	mos, exts, err := modifyTheSession(sessions, 1, LaterThanCurrent)
+	mos, exts, _,err := modifyTheSession(sessions, 1, LaterThanCurrent)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -175,3 +175,4 @@ func Test_timeTest(t *testing.T) {
 		t.Log(false)
 	}
 }
+
