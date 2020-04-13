@@ -176,3 +176,13 @@ func Test_timeTest(t *testing.T) {
 	}
 }
 
+type SSS struct {
+	Data []int
+}
+func Test_pointer(t *testing.T){
+data:=[]int{0,10,1}
+sss:=new(SSS)
+sss.Data=data
+t.Log(sss)
+
+}

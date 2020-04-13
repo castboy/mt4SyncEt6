@@ -87,7 +87,12 @@ func Test_DecodeSession(t *testing.T) {
 
 
 func insertData() {
-	x, err := NewLocalhostEngineXorm()
+	xlive, err := NewProduceEngineXorm()
+	//x, err := xorm.NewEngine("mysql", "root:wang1234@/trading_system?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+	x,err:=NewLocalhostEngineXorm()
 	//x, err := xorm.NewEngine("mysql", "root:wang1234@/trading_system?charset=utf8")
 	if err != nil {
 		panic(err)
@@ -95,7 +100,7 @@ func insertData() {
 
 	ss := []Session{}
 
-	err = x.Table("session_copy_beforeFeedTime").Find(&ss)
+	err = xlive.Table("session").Find(&ss)
 	if err != nil {
 		panic(err)
 	}

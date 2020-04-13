@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6f89f5b1-35d0-4cdf-af23-fd1b08f6a62a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedTIme.go" beforeDir="false" afterPath="$PROJECT_DIR$/feedTIme.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feedTIme_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/feedTIme_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/session/json.go" beforeDir="false" afterPath="$PROJECT_DIR$/session/json.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/session/session.go" beforeDir="false" afterPath="$PROJECT_DIR$/session/session.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/session_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_compare_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/source_compare_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools.go" beforeDir="false" afterPath="$PROJECT_DIR$/tools.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/session_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-576">
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
-              <folding>
-                <element signature="e#20#87#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="378">
+              <caret line="107" column="23" lean-forward="true" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -34,41 +27,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source_compare_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="4640">
               <caret line="235" column="82" selection-start-line="235" selection-start-column="82" selection-end-line="235" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/feedTIme.go">
+        <entry file="file://$PROJECT_DIR$/goup_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+            <state relative-caret-position="380">
+              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
               <folding>
-                <element signature="n#!!block;n#UpdateTimeSpanByID#0" />
-                <element signature="n#!!block;n#DeleteSession#0" />
-                <element signature="n#!!block;n#timeUpdate#0" />
-                <element signature="n#!!block;n#sessionConv#0" />
-                <element signature="n#!!block;n#modifyTheSession#0" />
-                <element signature="n#!!block;n#deRepeate#0" />
-                <element signature="n#!!block;n#earlyTimeConv#0" />
-                <element signature="n#!!block;n#laterTimeConv#0" />
-                <element signature="n#!!block;n#modDeRepead#0" />
+                <element signature="e#20#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/feedTIme_test.go">
+        <entry file="file://$PROJECT_DIR$/session/session.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="57" column="77" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
-              <folding>
-                <element signature="n#!!block;n#Test_GetSourceByCatagory#0" />
-                <element signature="n#!!block;n#Test_GetSessionBySource#0" />
-              </folding>
+            <state relative-caret-position="400">
+              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -76,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="318" column="42" lean-forward="true" selection-start-line="318" selection-start-column="42" selection-end-line="318" selection-end-column="42" />
+            <state relative-caret-position="4320">
+              <caret line="224" column="61" selection-start-line="224" selection-start-column="61" selection-end-line="224" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -97,6 +78,7 @@
       <find>usdtry</find>
       <find>fmt</find>
       <find>sessionNew</find>
+      <find>172.1.1.85</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.13.5/libexec" />
@@ -133,10 +115,10 @@
         <option value="$PROJECT_DIR$/session/json.go" />
         <option value="$PROJECT_DIR$/source_compare_test.go" />
         <option value="$PROJECT_DIR$/feedTIme.go" />
-        <option value="$PROJECT_DIR$/feedTIme_test.go" />
-        <option value="$PROJECT_DIR$/tools.go" />
         <option value="$PROJECT_DIR$/session/session.go" />
+        <option value="$PROJECT_DIR$/feedTIme_test.go" />
         <option value="$PROJECT_DIR$/session_test.go" />
+        <option value="$PROJECT_DIR$/tools.go" />
       </list>
     </option>
   </component>
@@ -149,7 +131,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="821" />
+    <option name="height" value="812" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -162,11 +144,6 @@
             <path>
               <item name="mt4SyncEt6" type="b2602c69:ProjectViewProjectNode" />
               <item name="mt4SyncEt6" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mt4SyncEt6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mt4SyncEt6" type="462c0819:PsiDirectoryNode" />
-              <item name="session" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,17 +197,6 @@
       <pattern value="^TestConvet$" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_DeRepeate in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="mt4SyncEt6" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="mt4SyncEt6" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^Test_DeRepeate$" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test_DecodeSession in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="mt4SyncEt6" />
       <working_directory value="$PROJECT_DIR$" />
@@ -264,13 +230,24 @@
       <pattern value="^Test_modifyDB$" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_pointer in mt4SyncEt6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="mt4SyncEt6" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="mt4SyncEt6" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_pointer$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Test.Test_DecodeSession in mt4SyncEt6" />
+        <item itemvalue="Go Test.Test_pointer in mt4SyncEt6" />
         <item itemvalue="Go Test.Test_Sessiion in mt4SyncEt6" />
         <item itemvalue="Go Test.TestConvet in mt4SyncEt6" />
         <item itemvalue="Go Test.Test_modifyDB in mt4SyncEt6" />
-        <item itemvalue="Go Test.Test_DeRepeate in mt4SyncEt6" />
       </list>
     </recent_temporary>
   </component>
@@ -278,34 +255,34 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 28m 24s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 10m 19s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 28m 38s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 22m 23s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 29m 04s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 23m 24s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 30m 38s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 35m 37s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 33m 00s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 36m 04s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 33m 30s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 42m 44s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 34m 03s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 43m 54s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 35m 46s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 51m 08s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_Sessiion_in_mt4SyncEt6 - 2020.03.17 at 15h 35m 59s.xml">
-      <configuration name="Test_Sessiion in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 52m 14s.xml">
+      <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.03.17 at 16h 00m 03s.xml">
+    <history-entry file="Test_DecodeSession_in_mt4SyncEt6 - 2020.04.13 at 15h 55m 40s.xml">
       <configuration name="Test_DecodeSession in mt4SyncEt6" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
@@ -319,22 +296,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="821" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="812" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24391988" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26895565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.37585735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.38504156" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32880434" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32777777" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.27160493" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.26944444" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.38010898" />
       <window_info anchor="bottom" id="调试" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -505,16 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/goup_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding>
-            <element signature="e#20#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account_group_evo">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -522,41 +490,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feedTIme_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="57" column="77" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
-          <folding>
-            <element signature="n#!!block;n#Test_GetSourceByCatagory#0" />
-            <element signature="n#!!block;n#Test_GetSessionBySource#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_compare_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="235" column="82" selection-start-line="235" selection-start-column="82" selection-end-line="235" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="318" column="42" lean-forward="true" selection-start-line="318" selection-start-column="42" selection-end-line="318" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/session/session.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="145" column="5" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/feedTIme.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
+        <state relative-caret-position="-361">
           <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
           <folding>
             <element signature="n#!!block;n#UpdateTimeSpanByID#0" />
@@ -572,13 +508,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/feedTIme_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="185" column="10" selection-start-line="185" selection-start-column="10" selection-end-line="185" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!block;n#Test_GetSourceByCatagory#0" />
+            <element signature="n#!!block;n#Test_GetSessionBySource#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/session_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="378">
+          <caret line="107" column="23" lean-forward="true" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_compare_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4640">
+          <caret line="235" column="82" selection-start-line="235" selection-start-column="82" selection-end-line="235" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goup_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
           <folding>
-            <element signature="e#20#87#0" expanded="true" />
+            <element signature="e#20#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session/session.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4320">
+          <caret line="224" column="61" selection-start-line="224" selection-start-column="61" selection-end-line="224" selection-end-column="61" />
         </state>
       </provider>
     </entry>

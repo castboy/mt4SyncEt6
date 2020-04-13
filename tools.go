@@ -186,7 +186,7 @@ func NewKiteEngineXorm() (*xorm.Engine, error) {
 	"glmt4dev_wr", "mt4geed0Uokohphai1UNgeep5ae", "devcondb.r62g.cn",
 	"3306", "trading_system")*/
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
-		"root", "wang1234", "172.1.1.85", "3306", "trading_system")
+		"root", "wang1234", "localhost", "3306", "trading_system")
 	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
 	if err != nil {
 		return nil, err
@@ -220,7 +220,7 @@ func NewProduceEngineXorm() (*xorm.Engine, error) {
 func NewLocalhostEngineXorm() (*xorm.Engine, error) {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
 		"root", "123456789", "localhost",
-		"3306", "trading_system")
+		"3306", "trading_system_produce")
 
 	mt4Engine, err := xorm.NewEngine("mysql", dataSourceName)
 	if err != nil {
