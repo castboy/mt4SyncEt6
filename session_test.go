@@ -18,6 +18,7 @@ func TestMt4ToEt6(t *testing.T) {
 	}
 
 	et6 := session.Mt4ToEt6(mt4)
+
 	fmt.Println(et6)
 }
 
